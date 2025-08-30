@@ -1,0 +1,112 @@
+
+html,
+body {
+  scroll-behavior: smooth;
+  /* background: #1b1b1b; */
+  overflow-x: clip;
+  
+ 
+
+}
+.container-weblog {
+  width: 90%;
+  overflow-x: hidden;
+  margin: 0.5rem auto ;
+  height: 220px;
+  overflow-x: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.itemLeft,
+.itemRight {
+  width: 250px;
+  height: 190px;
+  border:7px solid #252525;
+  border-radius: 8px;
+  position: absolute;
+  animation: 60s linear infinite;
+  background-image: url(../assets/weblog_img/intro-1743562797.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  
+}
+.weblog-info-link{
+    z-index: 100;
+    /* background: linear-gradient(rgba(0, 0, 0, 0) 27%, rgba(0, 0, 0, 0.8) 75%, rgb(18, 18, 18) 100%); */
+        background: linear-gradient(
+            rgba(0, 0, 0, 0) 1%,
+        rgba(0, 0, 0, 0.1) 10%,          /* کاملاً شفاف (بالا) */
+        rgba(0, 0, 0, 0.4) 40%,        /* شروع محو شدن */
+        rgba(0, 0, 0, 0.7) 70%,        /* سایه پررنگ‌تر */
+        rgba(18, 18, 18, 0.9) 100%     /* مشکی کامل (پایین) */
+    );
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.weblog-info-link  h3{
+    margin-bottom: -px;
+}
+.weblog-info-link  p{
+    font-size: 12px;
+}
+
+.itemLeft {
+  left: 2200px;
+  animation-name: sLeft;
+  cursor: pointer;
+}
+.itemRight {
+  right: 2200px;
+  animation-name: sRight;
+  cursor: pointer;
+}
+.itemLeft:hover,
+.itemRight:hover {
+  animation-duration: 60s;
+  opacity: 0.9; 
+  transform: scale(1.02); 
+  transition: all 0.3s ease;
+
+  
+}
+.weblog-system-sec{
+  overflow: hidden;
+}
+
+@keyframes sLeft {
+  to {left: -200px;}}
+
+@keyframes sRight {
+  to {right: -200px;}}
+
+/* .item1 {animation-delay: -26.25s;}
+.item2 {animation-delay: -22.5s;}
+.item3 {animation-delay: -18.75s;}
+.item4 {animation-delay: -15s;}
+.item5 {animation-delay: -11.25s;}
+.item6 {animation-delay: -7.5s;}
+.item7 {animation-delay: -3.75s;}
+.item8 {animation-delay: 0s;} */
+.item1 { animation-delay: -52.5s; } /* قبلا -26.25s */
+.item2 { animation-delay: -45s; }   /* قبلا -22.5s */
+.item3 { animation-delay: -37.5s; } /* قبلا -18.75s */
+.item4 { animation-delay: -30s; }   /* قبلا -15s */
+.item5 { animation-delay: -22.5s; } /* قبلا -11.25s */
+.item6 { animation-delay: -15s; }   /* قبلا -7.5s */
+.item7 { animation-delay: -7.5s; }  /* قبلا -3.75s */
+.item8 { animation-delay: 0s; }

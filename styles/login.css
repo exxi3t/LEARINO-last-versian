@@ -1,0 +1,382 @@
+   @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;300;400;500;700;900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000;
+            color: #fffffe;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* عناصر پس زمینه انیمیشنی */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+            z-index: 0;
+            display: none;
+        }
+
+        /* کانتینر اصلی */
+        .auth-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+           
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            margin: 20px;
+            z-index: 10;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            /* background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%); */
+            z-index: -1;
+            pointer-events: none;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* هدر فرم */
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #ffd166, #f7b731);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-header p {
+            color: #a7a9be;
+            font-size: 14px;
+        }
+
+        /* فرم‌ها */
+        .form {
+            display: none;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form.active {
+            display: flex;
+        }
+
+        /* گروه‌های ورودی */
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .input-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #a7a9be;
+            transition: all 0.3s ease;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 18px 60px 18px 20px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 16px;
+            color: #fffffe;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #ffd166;
+            box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.2);
+        }
+
+        .input-field:focus + .input-icon {
+            color: #ffd166;
+        }
+
+        .input-label {
+            position: absolute;
+            top: 18px;
+            right: 60px;
+            color: #a7a9be;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            transform-origin: right center;
+            cursor: text;
+            padding: 0 5px;
+            border-radius: 4px;
+            background: transparent;
+        }
+
+        .input-field:focus + .input-icon + .input-label,
+        .input-field:not(:placeholder-shown) + .input-icon + .input-label,
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            top: -8px; /* قرار گرفتن روی خط بالایی اینپوت */
+            right: 20px; /* تنظیم موقعیت افقی */
+            font-size: 12px; /* کوچک‌تر شدن فونت */
+            color: #ffd166;
+            background: #000000d2; /* پس‌زمینه مشکی برای خوانایی */
+            backdrop-filter: blur(10px);
+            
+            padding: 0 5px;
+            z-index: 10;
+        }
+
+        /* دکمه نمایش رمز عبور */
+        .toggle-password {
+            position: absolute;
+            top: 22px;
+            left: 20px;
+            color: #a7a9be;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .toggle-password:hover {
+            color: #ffd166;
+        }
+
+        /* پیام‌های خطا */
+        .error-message {
+            color: #ff6e6e;
+            font-size: 13px;
+            margin-top: 8px;
+            margin-right: 10px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .input-field.error {
+            border-color: #ff6e6e;
+        }
+
+        .input-field.error + .input-icon {
+            color: #ff6e6e;
+        }
+
+        /* دکمه‌ها */
+        .btn {
+            background: linear-gradient(45deg, #ffd166, #f7b731);
+            color: #0f0e17;
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(255, 209, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 209, 102, 0.4);
+        }
+
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        /* لینک‌ها */
+        .form-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #a7a9be;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #ffd166;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .form-footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background: #ffd166;
+            transition: width 0.3s ease;
+        }
+
+        .form-footer a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* لینک فراموشی رمز عبور */
+        .forgot-password {
+            text-align: left;
+            margin-top: -15px;
+        }
+
+        .forgot-password a {
+            color: #a7a9be;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .forgot-password a:hover {
+            color: #ffd166;
+        }
+
+        .forgot-password a i {
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        /* پیام موفقیت */
+        .success-message {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            display: none;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message i {
+            margin-left: 5px;
+        }
+
+        /* انیمیشن‌های صفحه */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @media screen and (min-width:768px) {
+            .planet{
+                display: block;
+            }
+        }
+        /* ریسپانسیو */
+        @media (max-width: 500px) {
+            .auth-container {
+                padding: 30px 20px;
+                margin: 15px;
+            }
+
+            .form-header h2 {
+                font-size: 24px;
+            }
+
+            .input-field {
+                padding: 15px 50px 15px 15px;
+            }
+
+            .input-icon {
+                right: 15px;
+            }
+
+            .toggle-password {
+                left: 15px;
+            }
+
+            .input-label {
+                right: 50px;
+            }
+
+            .input-field:focus + .input-icon + .input-label,
+            .input-field:not(:placeholder-shown) + .input-icon + .input-label {
+                right: 15px;
+                top: -8px;
+                font-size: 12px;
+            }
+        }

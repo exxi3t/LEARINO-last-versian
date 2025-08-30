@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمایش فیلم‌ها</title>
+    <style>
+        /* استایل‌های پایه */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: black;
+            font-family: sans-serif;
+            padding: 15px;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* استایل ذرات پس‌زمینه */
+        #particlesbody678 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle678 {
+            position: absolute;
+            border-radius: 50%;
+            animation: float678 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes float678 {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* استایل محتوا */
+        .content678 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        /* استایل بخش اصلی */
+        section {
+            display: grid;
+            justify-content: center;
+            gap: 12px;
+            grid-template-columns: repeat(2, 1fr); /* پیش‌فرض: دو کارت در هر ردیف */
+        }
+        
+        /* استایل کارت فیلم */
+        .movie-box-card {
+            text-align: center;
+            background: transparent;
+            border-radius: 15px;
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: start;
+            text-decoration: none;
+            
+        }
+        
+        .movie-box-card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .movie-box-card p {
+            color: white;
+            margin-top: 10px;
+            font-size: 15px;
+            padding: 0 5px;
+            
+        }
+        
+        /* رسپانسیو برای تبلت */
+        @media screen and (min-width: 680px) {
+            section {
+                grid-template-columns: repeat(3, 1fr); /* سه کارت در هر ردیف */
+                gap: 15px;
+            }
+            
+            .movie-box-card {
+                height: 240px; /* افزایش جزئی ارتفاع */
+            }
+            
+            .movie-box-card img {
+                height: 62%; /* افزایش جزئی ارتفاع تصویر */
+            }
+        }
+        
+        /* رسپانسیو برای صفحه نمایش بزرگ */
+        @media screen and (min-width: 1024px) {
+            section {
+                grid-template-columns: repeat(4, 1fr); /* چهار کارت در هر ردیف */
+                max-width: 1200px;
+                margin: 0 auto;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .movie-box-card {
+                height: 260px; /* افزایش بیشتر ارتفاع */
+            }
+            
+            .movie-box-card img {
+                height: 64%; /* افزایش بیشتر ارتفاع تصویر */
+            }
+            
+            .movie-box-card p {
+                font-size: 16px; /* افزایش جزئی سایز فونت */
+            }
+        }
+        
+        /* رسپانسیو برای صفحه نمایش خیلی بزرگ */
+        @media screen and (min-width: 1440px) {
+            section {
+                grid-template-columns: repeat(5, 1fr); /* پنج کارت در هر ردیف */
+                max-width: 1400px;
+            }
+            
+            .movie-box-card {
+                height: 280px; /* افزایش نهایی ارتفاع */
+            }
+            
+            .movie-box-card img {
+                height: 66%; /* افزایش نهایی ارتفاع تصویر */
+            }
+            
+            .movie-box-card p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- کانتینر ذرات -->
+    <div id="particlesbody678"></div>
+    
+    <div class="content678">
+        <h1>تایتل</h1>
+        <section>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <p>ماداگاسکار</p>
+            </a>
+        </section>
+    </div>
+
+    <script>
+        // ایجاد ذرات پس‌زمینه
+        const particlesContainer678 = document.getElementById('particlesbody678');
+        const particleCount678 = 50;
+        
+        // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
+        const colors678 = [
+            'rgba(88, 101, 242, 0.7)',   // آبی لرینو
+            'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
+            'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
+            'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
+            'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
+        ];
+        
+        // ایجاد ذرات
+        for (let i678 = 0; i678 < particleCount678; i678++) {
+            const particle678 = document.createElement('div');
+            particle678.classList.add('particle678');
+            
+            // اندازه تصادفی بین 2 تا 8 پیکسل
+            const size678 = Math.random() * 6 + 2;
+            particle678.style.width = `${size678}px`;
+            particle678.style.height = `${size678}px`;
+            
+            // موقعیت تصادفی در صفحه
+            particle678.style.left = `${Math.random() * 100}%`;
+            particle678.style.top = `${Math.random() * 100}%`;
+            
+            // تاخیر انیمیشن تصادفی
+            particle678.style.animationDelay = `${Math.random() * 15}s`;
+            
+            // مدت زمان انیمیشن تصادفی
+            const duration678 = Math.random() * 10 + 10;
+            particle678.style.animationDuration = `${duration678}s`;
+            
+            // انتخاب رنگ تصادفی
+            const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
+            particle678.style.background = randomColor678;
+            
+            // شفافیت تصادفی
+            particle678.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            // افزودن ذره به کانتینر
+            particlesContainer678.appendChild(particle678);
+        }
+        
+        // تغییر اندازه ذرات هنگام تغییر سایز پنجره
+        window.addEventListener('resize', function() {
+            const particles678 = document.querySelectorAll('.particle678');
+            particles678.forEach(particle678 => {
+                // تنظیم مجدد موقعیت ذرات
+                particle678.style.left = `${Math.random() * 100}%`;
+                particle678.style.top = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

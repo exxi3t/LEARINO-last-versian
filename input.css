@@ -1,0 +1,602 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1400px;
+    --breakpoint-xxxl: 1600px;
+    --breakpoint--xxxxl: 2000px;
+    --container-1xl: 20px;
+}
+
+@font-face {
+    font-family: 'IRAN Yekan Pro';
+    src: url('./assets/fonts/iranyekanwebregular.woff2') format('woff2'),
+        url('./assets/fonts/iranyekanwebregular.woff') format('woff'),
+        url('./assets/fonts/iranyekanwebregular.ttf') format('truetype');
+}
+
+body,
+button,
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'IRAN Yekan Pro';
+
+}
+
+
+
+
+
+.show {
+    display: flex;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+p,
+svg {
+    cursor: pointer;
+    color: white;
+}
+
+:root {
+    --body--background--: #000;
+    --font-color: #ccc;
+    --normal-font-size: 14px;
+}
+
+body {
+    font-size: var(--normal-font-size);
+    color: var(--font-color);
+    min-height: 100vh;
+
+}
+
+.search-ic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-ic i {
+    margin: 3px -5px 0 5px;
+}
+.nav-profile{
+    background-color: rgba(255, 255, 255, 0.41);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.nav-profile i {
+    font-size: 19px;
+}
+.nav-buttons-father{
+    display: flex;
+    align-items: center;
+}
+.nav-buttons-father button{
+    margin: 0 2px;
+}
+.li-link {
+    padding: 15px 0;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-icon {
+    margin-right: auto;
+}
+
+.side-lis-link {
+    font-size: 18px;
+}
+
+.side-bar-container ul {
+    padding-right: 20px;
+}
+
+li {
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.rot {
+    transform: rotate(45deg);
+}
+
+.dropdown-ul li {
+    padding: 5px 0 5px 0;
+}
+
+.dropdown-ul {
+    padding: 10px 0;
+}
+
+.dropdown {
+    padding: 0px 0 0px 15px;
+    border-radius: 10px;
+
+}
+
+li a:hover {
+    .arrow-li {
+
+        border-left: 1px solid rgb(10, 161, 10);
+        border-top: 1px solid rgb(10, 161, 10);
+    }
+
+    color: rgb(10, 161, 10);
+    transition: all 0.1s linear;
+
+}
+
+.li-link:hover {
+    .arrow-li {
+
+        border-left: 1px solid rgb(10, 161, 10);
+        border-top: 1px solid rgb(10, 161, 10);
+    }
+
+    color: rgb(10, 161, 10);
+    transition: all 0.1s linear;
+
+}
+
+body,
+* {
+    box-sizing: border-box;
+
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+
+}
+
+.bar {
+    margin: 2px;
+    border: 1px solid black;
+}
+
+.main-logo {
+    padding-right: 15px;
+    margin-top: 5px;
+}
+
+.arrow-li {
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    border-top: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    transform: rotate(225deg);
+    transition: all linear 0.2s;
+    display: inline;
+}
+
+.rotate45 {
+    transform: rotate(45deg);
+}
+
+.button-nav-vrod {
+
+    font-size: 13px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.41);
+    backdrop-filter: blur(14.2px);
+    -webkit-backdrop-filter: blur(14.2px);
+    position: relative;
+}
+
+.button-nav-download {
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.41);
+    backdrop-filter: blur(14.2px);
+    -webkit-backdrop-filter: blur(14.2px);
+    position: relative;
+}
+
+.show {
+    display: flex;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+}
+
+.container-1 {
+    padding: 0 14px 0 14px;
+}
+
+.container2 {
+    padding: 0 44px 0 44px;
+}
+
+.button-ashterak {
+    border-radius: 5px;
+    font-size: 13px;
+    color: #fff;
+    background-color: rgb(10, 161, 10);
+}
+
+.button-nav-vrod::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(10, 161, 10);
+    transition: all linear 0.2s;
+    border-radius: 10px;
+}
+
+.button-nav-vrod:hover::before {
+    width: 100%;
+}
+
+.button-nav-download::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(10, 161, 10);
+    transition: all linear 0.3s;
+    border-radius: 10px;
+}
+
+
+.button-nav-download:hover::before {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.open-menu li {
+    margin-right: 35px;
+}
+
+nav {
+    padding: 0 14px 0 14px;
+    z-index: 100;
+    position: relative;
+    transition: all linear 0.3s;
+}
+
+.scroll-nav {
+    backdrop-filter: blur(15px);
+    background-color: #00000062;
+    padding-right: 1%;
+    width: 95%;
+    border-radius: 20px;
+    margin-top: 5px;
+
+}
+
+#slider-w-fix {
+    padding: 0 14px 0 14px;
+    padding-right: 4%;
+
+}
+
+
+
+.side-menu {
+    position: fixed;
+    transition: 1.2s;
+    transform: translateX(800px);
+    transition: all ease-out 0.5s;
+    z-index: 600;
+
+}
+
+.ham-menu li {
+    margin-right: 20px;
+    padding: 15px 10px 15px 10px;
+    font-size: 17px;
+}
+
+.menu-li-link {
+    margin-top: 28px;
+    font-size: 17px;
+
+}
+
+.a-space-link {
+    padding: 10px 0 10px 100%;
+    width: 50px;
+    border: 0;
+}
+
+header {
+    position: fixed;
+
+    z-index: 500;
+}
+
+.swiper {
+    height: 50vh;
+}
+
+.mySwiper {
+    position: relative;
+    z-index: 1;
+}
+
+.swiper-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.side-menu {
+    background-color: #16171A;
+}
+
+.first-slider-info img {
+    width: 120px;
+}
+
+.first-slider-info h1 {
+    margin-top: 10px;
+}
+
+.first-slider-info a {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.first-slider-info a:hover {
+    color: rgb(10, 161, 10);
+}
+
+.first-slider-info svg {
+    margin-left: 3px;
+}
+
+.first-slider-info {
+    position: absolute;
+    bottom: 10px;
+}
+
+.movie-info-md p {
+    padding: 0 10px 0 10px;
+
+}
+
+.imdb-grade {
+    margin-right: -3px;
+}
+
+.movie-info-md svg {
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.movie-info-md p {
+    margin-top: 10px;
+}
+
+.movie-info-md svg {
+    margin-top: 10px;
+}
+
+.movie-info-md a {
+    margin-top: 10px;
+}
+
+.bg1 {
+    background-image: url(https://media.mayava.ir/e6aMHyd72grWMY8nQDllexVFTqLAoaYTcMj_tT8v2BQ/rs:fit:1280/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bvc3Rlcl8xNzQxNzgyMTYwXzdiTnc0eWZGUU9XWFpLS01GeEZXSWJGbXN5cy5qcGc.webp  );
+}
+
+.bg2 {
+    background-image: url(https://media.mayava.ir/T6pOU0A3xW7K1iRi8LUPrOvruV8F6TwOMTSUXnEKAXU/rs:fit:565/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bob3RvMl8xNzQ0MjEzNjczX2RtbzZUWXV1SmdhWWluWEJQanJnRzltQjVvZCgxKS53ZWJw.webp );
+}
+
+.bg3 {
+    background-image: url(https://media.mayava.ir/3FqaWt33gWcxNCXbl3GWn5MQgVK0WE00D0Aihw5LShs/rs:fit:565/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bob3RvMl8xNzQyNDE3MTMyXzhUWWRzWWt2OTFOblB2VFRPZXpMaXYySTR4Zy5qcGc.webp);
+}
+
+.bg4 {
+    background-image: url(https://media.mayava.ir/UzAMmF0YZkiprsgXLhm52lM80oDjQCFLXhHHrgi1f1M/rs:fit:565/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bob3RvMl8xNzQzOTY2Mjg5X2Y3Zk1qR1FEMnNLM3FCbUpSWmx2Ykt2alRyMi53ZWJw.webp );
+}
+
+.bg5 {
+    background-image: url(https://media.mayava.ir/yR4zgq0Ais_H6BYGJNW1VTSesZnUnxbpbZa5Gcx-e0E/rs:fit:565/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bob3RvMl8xNzQ0MDQzMDI2X3RESFdXUmVlZm1PT2pCQ0paVWNrOGNOd3Nzay53ZWJw.webp );
+}
+
+.bg6 {
+    background-image: url(https://media.mayava.ir/LPtw9nzS57lxTtXhpMJKLS8r4mH9qaBWuW3inHQAW9c/rs:fit:565/f:webp/fq:jpeg:90:png:90:webp:90/dpr:2/q:85/el:true/sm:true/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bob3RvMl8xNzQzMDI2OTA1XzV6eWw3TDZIZkFxWmNqbmx2ek1PcnU1ckU1Qy5qcGc.webp);
+}
+
+.bg6:hover .card-video1 {
+    display: block;
+}
+
+.bg5:hover .card-video2 {
+    display: block;
+}
+
+.bg4:hover .card-video3 {
+    display: block;
+}
+
+.bg3:hover .card-video4 {
+    display: block;
+}
+
+.bg2:hover .card-video5 {
+    display: block;
+}
+
+.bg1:hover .card-video6 {
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.none {
+    display: none;
+}
+
+.card__link div {
+    z-index: 1;
+}
+
+.card__link {
+    width: 20%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+
+    transition: all ease-in-out 0.4s;
+}
+
+.card__link:hover {
+    width: 65%;
+}
+
+.container:hover .im:not(:hover) {
+    width: 13.6%;
+}
+
+.card__link div h2 {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.card__link div {
+    padding: 0 10px 5px 0;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-card-link img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+}
+
+.slider-card-link p {
+    color: white;
+    z-index: 200;
+    margin-top: 100px;
+    font-size: 15px;
+
+}
+
+.slider-card-link {
+    border-radius: 15px;
+    height: 300px;
+    background-color: transparent;
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
+
+}
+
+#slider-w-fix>h1 {
+    font-size: 19px;
+    letter-spacing: 1px;
+
+}
+
+#slider-w-fix {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid black;
+}
+
+.margin-slider-fix {
+    margin-top: -65px;
+}
+
+.hover-li-link-1:hover .dropdown1,
+.hover-li-link-2:hover .dropdown2 {
+    display: flex;
+}
+
+.weblog-system-sec h1 {
+    position: relative;
+    z-index: 1;
+    padding: 0 14px 9px 14px;
+    font-size: 19px;
+    padding-right: 4%;
+}
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

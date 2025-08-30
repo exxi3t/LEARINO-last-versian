@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سرزمین اوباش | لرینو</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/Info-movie.css">
+   
+</head>
+<body>
+    <!-- Video Section -->
+    <div class="video-container">
+        <video loop autoplay muted id="mainVideo"  
+         src="https://imdb-video.media-imdb.com/vi2053751833/1434659607842-pgv4ql-1683541736696.mp4?Expires=1749301697&Signature=Ywcpsvet~O2TV8zYaz7WGUX00BRCN8CmgJBCZhxt-y5vTvQ~B22XgwHajdEk7WV59-GiARQ~ur5L2WRts9xj03VUvbiHAfN5TQayR4UG54CU8r4gmvPg91UGOV9IZ~lo8trpJ1cKcZYXlZ7W1ZF9zFIZYHFZ0q~jWc9QjB6t5n3WYTeYRVBYwBUD1ayqAnjjDg2eq075NgE4TA~Ze1sZ0t9UTLIPx32YLBiT0oIfW8yFuxjLv~XjDJA3cstlY-iJx8s37nN1tuNOmDiyOIcPzuHPbxaugNN65rwiWhHHsxZ97wU0RIIyE46ilRYeMs9ZKJJwZKIJmdIqptEHKNmE1Q__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"   ></video>
+        <div class="overlay-content">
+            <img src="./assets/footer-namad/image_photo3_1743966289_a9YLMuK3MoQr1Au5SJPVp4dMn3o.webp" alt="سرزمین اوباش" class="movie-logo" id="movieLogo">
+            <button class="play-btn" id="playTrailer">
+                تماشا
+                <i class="fas fa-play mr-2"></i>
+            </button>
+            <div class="action-buttons">
+                <button class="action-btn like-animation" id="likeBtn">
+                    <i class="far fa-thumbs-up"></i>
+                    <div class="like-effect">
+                        <i class="fas fa-thumbs-up" style="color: #e50914;"></i>
+                    </div>
+                </button>
+                <button class="action-btn dislike-animation" id="dislikeBtn">
+                    <i class="far fa-thumbs-down"></i>
+                    <div class="dislike-effect">
+                        <i class="fas fa-thumbs-down" style="color: #e50914;"></i>
+                    </div>
+                </button>
+                <button class="action-btn bookmark-animation" id="bookmarkBtn">
+                    <i class="far fa-bookmark"></i>
+                    <div class="bookmark-effect">
+                        <i class="fas fa-bookmark" style="color: #e50914;"></i>
+                    </div>
+                    
+                </button>
+                <button class="action-btn share-animation" id="shareBtn">
+                    <i class="fas fa-share"></i>
+                    <div class="share-effect">
+                        <i class="fas fa-share" style="color: #e50914;"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="movie-meta">
+            <span><i class="fas fa-star"></i> IMDb 8.1</span>
+            <span><i class="fas fa-calendar"></i> 2025</span>
+            <span><i class="fas fa-film"></i> A+</span>
+            <span><i class="fas fa-globe"></i> آمریکا</span>
+            <span class="age-rating">+18</span>
+            <span class="like-percentage" id="likePercentage"><i class="fas fa-thumbs-up"></i> <span>0</span>% این فیلم را پسندیدند</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Tabs -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active" data-tab="info">اطلاعات فیلم</div>
+                <div class="tab" data-tab="episodes">قسمت‌ها</div>
+                <div class="tab" data-tab="comments">نظرات کاربران</div>
+            </div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="info">
+            <div class="movie-synopsis">
+                <h2 class="text-2xl font-bold mb-4">خلاصه داستان</h2>
+                <p>
+                    در دنیای تاریک و پر از جنایت سرزمین اوباش، گروهی از تبهکاران حرفه‌ای گرد هم می‌آیند تا بزرگترین سرقت
+                    تاریخ را انجام دهند...
+                </p>
+            </div>
+            <div class="movie-genres">
+                <span class="genre-tag">جنایی</span>
+                <span class="genre-tag">اکشن</span>
+                <span class="genre-tag">درام</span>
+            </div>
+            <div class="cast-slider">
+                <h2 class="cast-title">بازیگران و عوامل</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="بازیگر" class="cast-img">
+                            <div class="cast-name">رابرت دنیرو</div>
+                            <div class="cast-character">ویکتور</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="بازیگر" class="cast-img">
+                            <div class="cast-name">آل پاچینو</div>
+                            <div class="cast-character">کارلوس</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="بازیگر" class="cast-img">
+                            <div class="cast-name">آل پاچینو</div>
+                            <div class="cast-character">کارلوس</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="بازیگر" class="cast-img">
+                            <div class="cast-name">آل پاچینو</div>
+                            <div class="cast-character">کارلوس</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Episodes Tab -->
+        <div class="tab-content" id="episodes">
+            <div class="season-selector">
+                <div class="season-tab active">فصل 1</div>
+                <div class="season-tab">فصل 2</div>
+            </div>
+            <div class="episode-grid">
+                <div class="episode-card">
+                    <img src="./assets/firstSliderImage/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bvc3Rlcl8xNzQyMTUwNDgwLmpwZw.webp" alt="قسمت 1" class="episode-thumbnail">
+                    <div class="episode-number">قسمت 1</div>
+                    <div class="episode-duration-badge">45 دقیقه</div>
+                    <div class="episode-info">
+                        <h3 class="episode-title">شروع ماجرا</h3>
+                        <p class="episode-description">اولین قسمت از سریال سرزمین اوباش که در آن با شخصیت‌های اصلی آشنا می‌شویم...</p>
+                        <div class="episode-actions">
+                            <button class="episode-play-btn">
+                                <i class="fas fa-play"></i>
+                                پخش
+                            </button>
+                            <i class="far fa-bookmark episode-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-card">
+                    <img src="./assets/firstSliderImage/bG9jYWw6Ly8vbWF5YXZhL2ltYWdlX3Bvc3Rlcl8xNzQyMTUwNDgwLmpwZw.webp" alt="قسمت 1" class="episode-thumbnail">
+                    <div class="episode-number">قسمت 1</div>
+                    <div class="episode-duration-badge">45 دقیقه</div>
+                    <div class="episode-info">
+                        <h3 class="episode-title">شروع ماجرا</h3>
+                        <p class="episode-description">اولین قسمت از سریال سرزمین اوباش که در آن با شخصیت‌های اصلی آشنا می‌شویم...</p>
+                        <div class="episode-actions">
+                            <button class="episode-play-btn">
+                                <i class="fas fa-play"></i>
+                                پخش
+                            </button>
+                            <i class="far fa-bookmark episode-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Tab -->
+        <div class="tab-content" id="comments">
+            <div class="comment-list-tab" id="commentList">
+                <!-- Comments will be dynamically added here -->
+            </div>
+            <div class="comment-form-tab">
+                <textarea class="comment-input-tab" id="commentInput" placeholder="نظر خود را بنویسید..."></textarea>
+                <button class="comment-submit-tab" id="commentSubmit">ارسال</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-comment-btn" id="floatingCommentBtn">
+        <i class="fas fa-comment"></i>
+    </div>
+    <div class="scroll-to-bottom-btn" id="scrollToBottomBtn">
+        <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script src="./javaScript/movieInfo.js"></script>
+</body>
+</html>
