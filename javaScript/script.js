@@ -469,7 +469,7 @@ window.addEventListener("load", () => {
     initialLoader.style.transition = "opacity 0.5s";
     initialLoader.style.opacity = 0;
     setTimeout(()=> initialLoader.style.display="none",500);
-  }, 500); // کمی تاخیر قبل محو شدن
+  }, 100); // کمی تاخیر قبل محو شدن
 });
 
 // لودینگ صفحات داخلی (مناسب برای رفتن بین صفحات یا back/forward)
