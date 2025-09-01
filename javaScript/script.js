@@ -455,25 +455,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //  loading
- const loader = document.getElementById("page-loader");
 
-  // نمایش لودینگ وقتی صفحه شروع به بارگذاری میکنه
-  document.addEventListener("readystatechange", () => {
-    if (document.readyState === "loading") {
-      loader.style.display = "flex";
-    }
-  });
+const initialLoader = document.getElementById("initial-loader");
+const pageLoader = document.getElementById("page-loader");
 
-  // مخفی کردن لودینگ وقتی صفحه کامل بارگذاری شد
-  window.addEventListener("load", () => {
-    loader.style.display = "none";
-  });
+// آماده کردن متن برای موج
+const text = document.getElementById("wave-text");
+text.innerHTML = text.textContent.split("").map((c,i)=>`<span style="--i:${i}">${c}</span>`).join("");
 
-  // برای حالت Back/Forward مرورگر (BFCache)
-  window.addEventListener("pageshow", (event) => {
-    loader.style.display = "none"; // مطمئن شو که بعد از برگشت، مخفی هست
-  });
+// لودینگ اولیه (فقط هنگام ورود به سایت)
+window.addEventListener("load", () => {
+  setTimeout(()=>{
+    initialLoader.style.transition = "opacity 0.5s";
+    initialLoader.style.opacity = 0;
+    setTimeout(()=> initialLoader.style.display="none",500);
+  }, 500); // کمی تاخیر قبل محو شدن
+});
 
-  window.addEventListener("pagehide", () => {
-    loader.style.display = "flex"; // وقتی صفحه ترک میشه، آماده باش
-  });
+// لودینگ صفحات داخلی (مناسب برای رفتن بین صفحات یا back/forward)
+document.addEventListener("readystatechange", () => {
+  if(document.readyState === "loading") pageLoader.style.display = "flex";
+});
+
+window.addEventListener("load", () => pageLoader.style.display = "none");
+window.addEventListener("pageshow", () => pageLoader.style.display = "none");
+window.addEventListener("pagehide", () => pageLoader.style.display = "flex");
