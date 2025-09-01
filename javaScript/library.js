@@ -1,33 +1,30 @@
-    let words444 = [
+ let words444 = [
             {
                 id: 1,
-                word: "تحقیق",
-                example: "برای نوشتن مقاله باید تحقیقات زیادی انجام داد.",
+                word: "make",
+                example: "She will make a cake for the party.",
                 learned: false,
                 details: {
-                    persianDefinition: "جستجو و بررسی دقیق برای کشف حقایق یا حل مسئله‌ای",
-                    englishDefinition: "Research: systematic investigation to establish facts",
-                    examples: ["تحقیقات علمی پایه‌ای برای پیشرفت تکنولوژی هستند.", "وی سال‌ها روی این موضوع تحقیق کرد."],
-                    synonyms: ["جستجو", "بررسی", "کاوش", "پژوهش"],
-                    antonyms: ["بی‌توجهی", "غفلت"],
-                    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                    meanings: ["ساختن", "به وجود آوردن", "تولید کردن", "انجام دادن"],
+                    examples: ["I will make dinner tonight.", "He makes furniture from wood.", "She made a mistake.", "They made a promise."],
+                    synonyms: ["create", "build", "construct", "produce"],
+                    antonyms: ["destroy", "break", "demolish", "ruin"]
                 }
             },
             {
                 id: 2,
-                word: "ابتکار",
-                example: "استفاده از انرژی خورشیدی نشانه ابتکار است.",
+                word: "research",
+                example: "Scientists conduct research to find new discoveries.",
                 learned: true,
                 details: {
-                    persianDefinition: "توانایی خلق ایده‌های جدید و نوآوری",
-                    englishDefinition: "Initiative: the ability to assess and initiate things independently",
-                    examples: ["مدیر این شرکت به خاطر ابتکاراتش معروف است.", "ابتکار عمل در کارها بسیار مهم است."],
-                    synonyms: ["نوآوری", "خلاقیت", "اختراع"],
-                    antonyms: ["تقلید", "پیروی"],
-                    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                    meanings: ["تحقیق", "پژوهش", "جستجو", "بررسی"],
+                    examples: ["He is doing research on climate change.", "The research took five years to complete.", "Her research was published in a scientific journal."],
+                    synonyms: ["investigation", "study", "inquiry", "analysis"],
+                    antonyms: ["ignorance", "neglect", "disregard"]
                 }
             }
         ];
+
         const dom444 = {
             wordInput444: document.getElementById('wordInput444'),
             addWordBtn444: document.getElementById('addWordBtn444'),
@@ -39,13 +36,11 @@
             wordModal444: document.getElementById('wordModal444'),
             closeModalBtn444: document.getElementById('closeModalBtn444'),
             modalWordTitle444: document.getElementById('modalWordTitle444'),
-            persianDefinition444: document.getElementById('persianDefinition444'),
-            englishDefinition444: document.getElementById('englishDefinition444'),
+            meaningsList444: document.getElementById('meaningsList444'),
             examplesList444: document.getElementById('examplesList444'),
             synonymsList444: document.getElementById('synonymsList444'),
             antonymsList444: document.getElementById('antonymsList444'),
-            wordAudio444: document.getElementById('wordAudio444'),
-            pronounceEnglishBtn444: document.getElementById('pronounceEnglishBtn444'),
+            pronounceWordBtn444: document.getElementById('pronounceWordBtn444'),
             tabs444: document.querySelectorAll('.tab444'),
             tabContents444: document.querySelectorAll('.tab-content444'),
             filterButtons444: document.querySelectorAll('.filter-btn444'),
@@ -61,6 +56,7 @@
         let currentFilter444 = 'all';
         let currentSearchTerm444 = '';
         let wordToDelete444 = null;
+        let currentWord444 = null;
         const synth444 = window.speechSynthesis;
 
         function init444() {
@@ -131,22 +127,30 @@
             }, 3000);
         }
 
-        function pronounceEnglishWord444(text) {
+        function pronounceWord444(word) {
             if (synth444.speaking) synth444.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
+            const utterance = new SpeechSynthesisUtterance(word);
             utterance.lang = 'en-US';
+            utterance.rate = 0.9;
             synth444.speak(utterance);
         }
 
         function showWordDetails444(word) {
+            currentWord444 = word;
             dom444.modalWordTitle444.textContent = word.word;
-            dom444.persianDefinition444.textContent = word.details.persianDefinition;
-            dom444.englishDefinition444.textContent = word.details.englishDefinition;
+            
+            // معانی
+            dom444.meaningsList444.innerHTML = word.details.meanings.map(meaning => `<li>${meaning}</li>`).join('');
+            
+            // مثال‌ها
             dom444.examplesList444.innerHTML = word.details.examples.map(ex => `<li>${ex}</li>`).join('');
+            
+            // هم‌معنی‌ها
             dom444.synonymsList444.innerHTML = word.details.synonyms.map(syn => `<li>${syn}</li>`).join('');
+            
+            // مخالف‌ها
             dom444.antonymsList444.innerHTML = word.details.antonyms.map(ant => `<li>${ant}</li>`).join('');
-            dom444.wordAudio444.querySelector('source').src = word.details.audio;
-            dom444.wordAudio444.load();
+            
             dom444.wordModal444.style.display = 'block';
         }
 
@@ -167,12 +171,10 @@
                 example: `مثال: این یک مثال برای ${wordText} است.`,
                 learned: false,
                 details: {
-                    persianDefinition: `تعریف فارسی برای ${wordText}`,
-                    englishDefinition: `English definition for ${wordText}`,
+                    meanings: ["معنی اول", "معنی دوم", "معنی سوم"],
                     examples: [`مثال ۱ برای ${wordText}`, `مثال ۲ برای ${wordText}`],
                     synonyms: ["هم‌معنی ۱", "هم‌معنی ۲"],
-                    antonyms: ["مخالف ۱", "مخالف ۲"],
-                    audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+                    antonyms: ["مخالف ۱", "مخالف ۲"]
                 }
             };
 
@@ -200,11 +202,6 @@
             showNotification444(`واژه "${word.word}" حذف شد!`, false);
         }
 
-        function pronounceWord444(word) {
-            const audio = new Audio(word.details.audio);
-            audio.play();
-        }
-
         function setupEventListeners444() {
             dom444.addWordBtn444.addEventListener('click', addWord444);
             dom444.wordInput444.addEventListener('keypress', e => e.key === 'Enter' && addWord444());
@@ -225,7 +222,11 @@
                 tab.classList.add('active444');
                 document.getElementById(tab.dataset.tab + 'Tab444').classList.add('active444');
             }));
-            dom444.pronounceEnglishBtn444.addEventListener('click', () => pronounceEnglishWord444(dom444.englishDefinition444.textContent));
+            dom444.pronounceWordBtn444.addEventListener('click', () => {
+                if (currentWord444) {
+                    pronounceWord444(currentWord444.word);
+                }
+            });
             dom444.confirmDeleteBtn444.addEventListener('click', () => {
                 if (wordToDelete444) {
                     deleteWord444(wordToDelete444);
@@ -237,6 +238,18 @@
                 wordToDelete444 = null;
                 dom444.confirmModal444.style.display = 'none';
             });
+            
+            // بستن مودال با کلیک خارج از آن
+            window.addEventListener('click', (e) => {
+                if (e.target === dom444.wordModal444) {
+                    dom444.wordModal444.style.display = 'none';
+                }
+                if (e.target === dom444.confirmModal444) {
+                    dom444.confirmModal444.style.display = 'none';
+                    wordToDelete444 = null;
+                }
+            });
+            
             dom444.wordsContainer444.addEventListener('click', e => {
                 const card = e.target.closest('.word-card444');
                 if (!card) return;
@@ -244,9 +257,14 @@
                 const word = words444.find(w => w.id === wordId);
                 if (e.target.closest('.action-btn-learn444')) toggleLearned444(wordId);
                 else if (e.target.closest('.action-btn-delete444')) showDeleteConfirmation444(wordId, word.word);
-                else if (e.target.closest('.action-btn-pronounce444')) pronounceWord444(word);
+                else if (e.target.closest('.action-btn-pronounce444')) pronounceWord444(word.word);
                 else if (e.target.closest('.action-btn-details444')) showWordDetails444(word);
             });
         }
-
+         const backBtn3 = document.querySelector('#goHome3');
+    if (backBtn3) {
+        backBtn3.addEventListener('click', () => {
+            loadPage('home');
+        });
+    }
         init444();

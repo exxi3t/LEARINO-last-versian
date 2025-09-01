@@ -7,7 +7,26 @@
             overflow-x: hidden;
            
         }
-
+                /* استایل کنترل صدا - اضافه شده */
+        .volume-control {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .volume-control:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -165,14 +184,21 @@
 
         .movie-meta i {
             margin-left: 5px;
+            margin-top:-5px ;
         }
 
         .age-rating {
             background-color: #e50914;
             color: white;
-            padding: 2px 8px;
+            text-align: center;
+            justify-content: center;
+            width: 40px;
+            height: 20px;        
+            display: flex;
+            align-items: center;
             border-radius: 4px;
             font-size: 14px;
+            
             font-weight: bold;
         }
 
@@ -813,4 +839,8 @@
         .tabs-container::-webkit-scrollbar-thumb {
             background: #e50914;
             border-radius: 5px;
+        }
+        @media screen and (min-width: 768px){
+             .movie-meta span i{
+                margin-top: -7px;
         }

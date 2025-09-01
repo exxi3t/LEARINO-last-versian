@@ -22,6 +22,24 @@
                 disliked: false
             }
         ];
+          // مدیریت کنترل صدا - اضافه شده
+        const video = document.getElementById('mainVideo');
+        const volumeControl = document.getElementById('volumeControl');
+        let isMuted = true;
+        
+        // غیرفعال کردن حالت mute اولیه برای پخش صدا
+      
+        
+        volumeControl.addEventListener('click', () => {
+            isMuted = !isMuted;
+            video.muted = isMuted;
+            
+            if (isMuted) {
+                volumeControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                volumeControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
 
         // Like Percentage Data (Replace with actual data source)
         let likePercentage = 85;

@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/Info-movie.css">
+    <!-- <link rel="stylesheet" href="./styles/media.css"> -->
    
 </head>
 <body>
     <!-- Video Section -->
     <div class="video-container">
-        <video loop autoplay muted id="mainVideo"  
-         src="https://imdb-video.media-imdb.com/vi2053751833/1434659607842-pgv4ql-1683541736696.mp4?Expires=1749301697&Signature=Ywcpsvet~O2TV8zYaz7WGUX00BRCN8CmgJBCZhxt-y5vTvQ~B22XgwHajdEk7WV59-GiARQ~ur5L2WRts9xj03VUvbiHAfN5TQayR4UG54CU8r4gmvPg91UGOV9IZ~lo8trpJ1cKcZYXlZ7W1ZF9zFIZYHFZ0q~jWc9QjB6t5n3WYTeYRVBYwBUD1ayqAnjjDg2eq075NgE4TA~Ze1sZ0t9UTLIPx32YLBiT0oIfW8yFuxjLv~XjDJA3cstlY-iJx8s37nN1tuNOmDiyOIcPzuHPbxaugNN65rwiWhHHsxZ97wU0RIIyE46ilRYeMs9ZKJJwZKIJmdIqptEHKNmE1Q__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"   ></video>
+        <video loop autoplay muted  id="mainVideo" src="https://imdb-video.media-imdb.com/vi3174680601/1434659607842-pgv4ql-1755263010936.mp4?Expires=1756754256&Signature=sWkPgm27KRirK4aNKhsAkEA6xeAyaSNGVoPVDS5SsOuZd-LwWC9zHbvmwnieLShfJlS8yLIlrAc5PRpyZhmGqfNxNRLXAP8epfreIWNGfcmXqYkYR95EvmbuPbpmF4kFwrsYQ2f7uVMGMA4xPT-jYLQ3kgKUumEpHQ9bMG55NT8MIvSky4~n3RlgtoU~F9uQnaRUz9g4d2L3lfUjT~jvmTRVDeuLOKbPTGeq~kEc5pPOlXQmWUxrqz6~TuqN4ONPx6FRIGTHhiNlrXOr8eZbmkOXWdktYlmuRwgA2k~ii3yRQ9Z~0uKVhzDv1gxf0ft1-P~lMaOH-EAP4xpou6Py6g__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"></video>
+        
+         
+        <div class="volume-control" id="volumeControl">
+            <i class="fas fa-volume-mute"></i>
+        </div>
         <div class="overlay-content">
             <img src="./assets/footer-namad/image_photo3_1743966289_a9YLMuK3MoQr1Au5SJPVp4dMn3o.webp" alt="سرزمین اوباش" class="movie-logo" id="movieLogo">
-            <button class="play-btn" id="playTrailer">
-                تماشا
+           <!-- تغییر به تگ a برای انتقال به صفحه فیلم -->
+            <a href="./player.html" class="play-btn" id="playTrailer">
+                تماشای تریلر
                 <i class="fas fa-play mr-2"></i>
-            </button>
+            </a>
             <div class="action-buttons">
                 <button class="action-btn like-animation" id="likeBtn">
                     <i class="far fa-thumbs-up"></i>

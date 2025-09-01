@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما - لرینو</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های پایه */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: black;
+            font-family: sans-serif;
+            padding: 15px;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* استایل ذرات پس‌زمینه */
+        #particlesbody678 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle678 {
+            position: absolute;
+            border-radius: 50%;
+            animation: float678 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes float678 {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* استایل محتوا */
+        .content678 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        /* استایل بخش اصلی */
+        .about-section {
+            display: grid;
+            justify-content: center;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* استایل کارت درباره ما */
+        .about-card {
+            text-align: center;
+            background: transparent;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .about-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+        
+        .about-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(80, 80, 80, 0.5);
+            margin-bottom: 15px;
+        }
+        
+        .about-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .about-subtitle {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            margin-bottom: 15px;
+        }
+        
+        .about-content {
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* استایل تیم */
+        .team-section {
+            margin-top: 30px;
+        }
+        
+        .team-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: transparent;
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(80, 80, 80, 0.5);
+            margin-bottom: 10px;
+        }
+        
+        .team-name {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .team-social a {
+            color: #cccccc;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            color: #7289da;
+        }
+        
+        /* استایل ویژگی‌ها */
+        .features-section {
+            margin-top: 30px;
+        }
+        
+        .features-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            background: transparent;
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #7289da;
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .feature-desc {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        /* رسپانسیو برای تبلت */
+        @media screen and (min-width: 680px) {
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .about-card {
+                padding: 25px;
+            }
+        }
+        
+        /* رسپانسیو برای صفحه نمایش بزرگ */
+        @media screen and (min-width: 1024px) {
+            .content678 {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            
+            .about-card {
+                padding: 30px;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* رسپانسیو برای صفحه نمایش خیلی بزرگ */
+        @media screen and (min-width: 1440px) {
+            .content678 {
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- کانتینر ذرات -->
+    <div id="particlesbody678"></div>
+    
+    <div class="content678">
+        <h1>درباره ما</h1>
+        
+        <div class="about-section">
+            <div class="about-card">
+                <div class="about-header">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="لوگو لرینو" class="about-avatar">
+                    <div class="about-title">لرینو</div>
+                    <div class="about-subtitle">پلتفرم پیشرو در ارائه محتوای دیجیتال</div>
+                </div>
+                
+                <div class="about-content">
+                    <p>لرینو در سال ۱۴۰۰ با هدف ایجاد تحول در صنعت محتوای دیجیتال تأسیس شد. ما باور داریم که هر فردی باید به محتوای باکیفیت و در دسترس دسترسی داشته باشد، بدون محدودیت‌های جغرافیایی یا مالی.</p>
+                    
+                    <p>تیم لرینو متشکل از متخصصان خلاق و بااستعدادی است که با اشتیاق فراوان در زمینه‌های مختلف از جمله تولید محتوا، فناوری اطلاعات، طراحی و بازاریابی دیجیتال فعالیت می‌کنند. ما همواره در تلاش هستیم تا با بهره‌گیری از جدیدترین فناوری‌ها، تجربه‌ای منحصر به فرد برای کاربران خود خلق کنیم.</p>
+                    
+                    <p>ماموریت ما ارائه خدمات و محتوای باکیفیت، خلاقانه و کاربرپسند است که نیازهای متنوع کاربران را پوشش دهد. ارزش‌های اصلی ما شامل کیفیت، نوآوری، صداقت و تعهد به رضایت کاربران است.</p>
+                    
+                    <p>ما به همکاری و مشارکت با تولیدکنندگان محتوا و استودیوهای مستقل اعتقاد داریم و همواره در پی ایجاد بستری مناسب برای رشد و توسعه صنعت محتوای دیجیتال در ایران هستیم.</p>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <div class="features-title">چرا لرینو؟</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="feature-title">کیفیت بالا</div>
+                        <div class="feature-desc">محتوای باکیفیت و منتخب</div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-title">دسترسی سریع</div>
+                        <div class="feature-desc">دانلود و استریم بدون محدودیت</div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="feature-title">امنیت اطلاعات</div>
+                        <div class="feature-desc">حفاظت از داده‌های کاربران</div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-title">پشتیبانی ۲۴/۷</div>
+                        <div class="feature-desc">پشتیبانی دائمی و پاسخگو</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <div class="team-title">تیم ما</div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="عضو تیم" class="team-avatar">
+                        <div class="team-name">رضا محمدی</div>
+                        <div class="team-role">مدیر فنی</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="عضو تیم" class="team-avatar">
+                        <div class="team-name">فاطمه احمدی</div>
+                        <div class="team-role">تولید محتوا</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="عضو تیم" class="team-avatar">
+                        <div class="team-name">امیر حسینی</div>
+                        <div class="team-role">توسعه دهنده</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="عضو تیم" class="team-avatar">
+                        <div class="team-name">سارا کریمی</div>
+                        <div class="team-role">طراح رابط کاربری</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ایجاد ذرات پس‌زمینه
+        const particlesContainer678 = document.getElementById('particlesbody678');
+        const particleCount678 = 50;
+        
+        // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
+        const colors678 = [
+            'rgba(88, 101, 242, 0.7)',   // آبی لرینو
+            'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
+            'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
+            'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
+            'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
+        ];
+        
+        // ایجاد ذرات
+        for (let i678 = 0; i678 < particleCount678; i678++) {
+            const particle678 = document.createElement('div');
+            particle678.classList.add('particle678');
+            
+            // اندازه تصادفی بین 2 تا 8 پیکسل
+            const size678 = Math.random() * 6 + 2;
+            particle678.style.width = `${size678}px`;
+            particle678.style.height = `${size678}px`;
+            
+            // موقعیت تصادفی در صفحه
+            particle678.style.left = `${Math.random() * 100}%`;
+            particle678.style.top = `${Math.random() * 100}%`;
+            
+            // تاخیر انیمیشن تصادفی
+            particle678.style.animationDelay = `${Math.random() * 15}s`;
+            
+            // مدت زمان انیمیشن تصادفی
+            const duration678 = Math.random() * 10 + 10;
+            particle678.style.animationDuration = `${duration678}s`;
+            
+            // انتخاب رنگ تصادفی
+            const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
+            particle678.style.background = randomColor678;
+            
+            // شفافیت تصادفی
+            particle678.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            // افزودن ذره به کانتینر
+            particlesContainer678.appendChild(particle678);
+        }
+        
+        // تغییر اندازه ذرات هنگام تغییر سایز پنجره
+        window.addEventListener('resize', function() {
+            const particles678 = document.querySelectorAll('.particle678');
+            particles678.forEach(particle678 => {
+                // تنظیم مجدد موقعیت ذرات
+                particle678.style.left = `${Math.random() * 100}%`;
+                particle678.style.top = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

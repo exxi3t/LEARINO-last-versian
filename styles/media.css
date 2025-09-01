@@ -6,13 +6,20 @@
     .swiper {
         height: 100vh;
     }
-
+    .backBut{
+        display: block;
+    }
     .first-slider-info {
         position: absolute;
         bottom: 16%;
         right: 40px;
     }
-
+    .nav-profile{
+        display: block;
+    }
+    .last{
+        display: block;
+    }
     .more-info-slider {
         margin-top: 30px;
     }
@@ -36,6 +43,10 @@
         margin-left: 6px;
 
     }
+    /* .movie-meta span i{
+                margin-top: -7px;
+            } */
+   
 }
 
 @media screen and (min-width: 992px) {

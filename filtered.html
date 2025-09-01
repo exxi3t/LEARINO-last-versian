@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نمایش فیلم‌ها</title>
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* استایل‌های پایه */
         * {
@@ -83,7 +85,8 @@
             justify-content: flex-start;
             align-items: start;
             text-decoration: none;
-            
+            transition: all 0.4s ease;
+            cursor: pointer;
         }
         
         .movie-box-card img {
@@ -91,6 +94,7 @@
             height: 60%;
             object-fit: cover;
             border-radius: 8px;
+            transition: all 0.4s ease;
         }
         
         .movie-box-card p {
@@ -98,7 +102,119 @@
             margin-top: 10px;
             font-size: 15px;
             padding: 0 5px;
+            transition: all 0.4s ease;
+        }
+        
+        /* اطلاعات اضافی (پنهان در حالت عادی) */
+        .movie-info {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        span{
+            display: flex;
+            align-items: center;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            gap:0 5px;
+        }
+        
+        .rating i {
+            color: gold;
+            margin-top: -4px;
+        }
+        
+        .popularity {
+            display: flex;
+            align-items: center;
+            gap: 0 5px;
+            text-align: center;
             
+        }
+        
+        .popularity i {
+            color: #ff4757;
+            margin-top: -5px;
+            font-size: 17px;
+        }
+        
+        .country-flag {
+            width: auto;
+            font-size: 12px;
+            height: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        .country-flag img{
+            width: 25px;
+            height: 10px;
+        }
+        .play-but{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 5px;
+            bottom: 48px;
+            border: 1px solid rgb(7, 36, 97);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+            transition: all linear 0.8s;
+        }
+        .save-but{
+             position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 45px;
+            bottom: 48px;
+             border: 1px solid rgb(7, 36, 97);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        /* افکت hover */
+        .movie-box-card:hover {
+            .play-but{
+                display: flex;
+            }
+            .save-but{
+                display: flex;
+            }
+            transform: scale(1.1);
+            z-index: 2;
+            box-shadow: 0 10px 25px rgba(88, 101, 242, 0.5);
+        }
+        
+        .movie-box-card:hover img {
+            height: 70%;
+            filter: brightness(0.8);
+        }
+        
+        .movie-box-card:hover p {
+            transform: translateY(-5px);
+        }
+        
+        .movie-box-card:hover .movie-info {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* رسپانسیو برای تبلت */
@@ -170,28 +286,213 @@
         <section>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
             <a href="./movie-information.html" class="movie-box-card">
                 <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
                 <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
             </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
+                <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
+            </a>
+            <a href="./movie-information.html" class="movie-box-card">
+                <img src="./assets/firstSliderImage/IMAGE-poster.webp" alt="ماداگاسکار">
+                <span class="play-but">
+
+                    <i class="fas fa-play mr-2 "></i>
+                </span>
+                <span class="save-but">
+                   <i class="fas fa-bookmark"></i>
+                </span>
+                <p>ماداگاسکار</p>
+                <div class="movie-info">
+                    <div class="rating">
+                               <i class="fas fa-star"></i>
+                        <span>7.8</span>
+                        IMDB
+                    </div>
+                    <div class="popularity">
+                         <i class="fas fa-thumbs-up" style="color: rgb(255, 255, 255);"></i>
+                        <span>۸۴٪</span>
+                    </div>
+                    <div class="country-flag">
+                        <p>2024</p>
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA" width="24" height="16">
+                    </div>
+                </div>
+            </a>
+
         </section>
     </div>
 

@@ -406,7 +406,72 @@ document.addEventListener('DOMContentLoaded', function() {
             loadPage('profile');
         });
     }
+    const backBtn = document.querySelector('#goHome');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            loadPage('home');
+        });
+    }
+   
+    const backBtn2 = document.querySelector('#goHome2');
+    if (backBtn2) {
+        backBtn2.addEventListener('click', () => {
+            loadPage('home');
+        });
+    }
+    const backBtn3 = document.querySelector('#goHome3');
+    if (backBtn3) {
+        backBtn3.addEventListener('click', () => {
+            loadPage('home');
+        });
+    }
    
 });
 
         
+
+
+
+// install new versian aalert for App
+ window.addEventListener("DOMContentLoaded", () => {
+    const ua = navigator.userAgent.toLowerCase();
+
+     if (ua.includes("median")) {
+    const btnDownload = document.querySelector("#download-but");
+    if (btnDownload) btnDownload.style.display = "none"; // یا btn.remove();
+     }
+    if(ua.includes("median")){
+        const menuH = document.querySelector("#ham-menu")
+        if(menuH) menuH.style.display = "none";
+    }
+
+    // فقط اگر کاربر با نسخه قدیمی (GoNative) وارد شد
+    if (ua.includes("gonative")) {
+      document.getElementById("updateModal").style.display = "flex";
+    }
+  });
+
+
+
+
+//  loading
+
+  window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("page-loader");
+
+  // وقتی روی هر لینک کلیک شد → لودینگ رو نشون بده
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", e => {
+      // اگر لینک به صفحه‌ی جدید میره (نه # و نه جاوااسکریپت)
+      const href = link.getAttribute("href");
+      if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
+        loader.style.display = "flex";
+      }
+    });
+  });
+
+  // وقتی صفحه جدید کامل لود شد → مخفی کن
+  window.addEventListener("load", () => {
+    loader.style.display = "none";
+  });
+});
