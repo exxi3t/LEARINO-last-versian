@@ -455,17 +455,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //  loading
+ const initialLoader = document.getElementById("initial-loader");
+  const pageLoader = document.getElementById("page-loader");
 
-   const loader = document.getElementById("page-loader");
+  // متن LEARINO رو برای موج دادن به هر حرف جدا کن
+  const text = document.getElementById("wave-text");
+  text.innerHTML = text.textContent.split("").map((c,i)=>
+    `<span style="--i:${i}">${c}</span>`).join("");
 
-  // همیشه اول صفحه لودینگ نشون بده
-  document.addEventListener("readystatechange", () => {
-    if (document.readyState === "loading") {
-      loader.style.display = "flex";
-    }
-  });
-
-  // وقتی کامل لود شد مخفی کن
+  // لودینگ ورود اولیه
   window.addEventListener("load", () => {
-    loader.style.display = "none";
+    initialLoader.style.opacity = 1;
+    setTimeout(() => {
+      initialLoader.style.transition = "opacity 0.5s";
+      initialLoader.style.opacity = 0;
+      setTimeout(()=> initialLoader.style.display="none",500);
+    }, 500); // کمی تاخیر قبل محو شدن
   });
+
+  // لودینگ صفحات داخلی
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "loading") pageLoader.style.display = "flex";
+  });
+  window.addEventListener("load", () => pageLoader.style.display="none");
+  window.addEventListener("pageshow", () => pageLoader.style.display="none");
+  window.addEventListener("pagehide", () => pageLoader.style.display="flex");
