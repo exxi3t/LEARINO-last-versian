@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
         }
-
+        
         body {
             background-color: black;
             font-family: sans-serif;
@@ -26,211 +26,7 @@
             display: flex;
             flex-direction: column
             ;align-items: center;
-           
-        }
-
-        /* استایل ذرات پس‌زمینه */
-        #particlesbody678 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .main-content {
-            position: absolute;
-            top: 400px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 100px;
             
-        }
-
-        .buy-cadr {
-            position: relative;
-            width: 90%;
-            height: 80px;
-            border: 1px solid white;
-            margin: 10px 0 0 0;
-            border-radius: 12px;
-            position: relative;
-            justify-content: space-between;
-            background-color: rgba(0, 0, 0, 0.349);
-            backdrop-filter: blur(2px);
-            margin-top: 30px;
-            display: flex;
-            transition: all linear 0.1s;
-        }
-   
-        .particle678 {
-            position: absolute;
-            border-radius: 50%;
-            animation: float678 15s infinite linear;
-            pointer-events: none;
-        }
-
-        .eshtrak-versian {
-
-            z-index: 1;
-            width: 60px;
-            height: 80px;
-            border-radius: 0 12px 12px 0;
-            border-left: 2px solid white;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(67, 145, 67);
-
-        }
-
-        .eshtrak-versian p {
-            rotate: 90deg;
-            font-size: 19px;
-        }
-
-        
-
-        .cadr-rightSide {
-            display: flex;
-        }
-
-        .eshtrak-detail {
-            width: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 5px 0;
-            height: 80px;
-
-        }
-
-        .price p {
-            margin-right: 9px;
-            margin-bottom: 13px;
-            font-size: 10px;
-        }
-
-        .eshtrak-detail h4 {
-            margin-right: 5px;
-            margin-top: 4px;
-        }
-
-        .fake-price {
-            text-decoration: line-through;
-            color: rgb(119, 117, 114);
-        }
-
-        .price {
-            display: flex;
-        }
-        .profit-price{
-            background-color: rgb(67, 145, 67);
-            border-radius: 12px 0 0 0;
-            color: white;
-            width: 100px;
-            position: absolute;
-            left: 0;
-            font-size: 12px;
-        }
-        .buy-detail{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .buy-detail a {
-            font-size: 12px;
-            margin:40px 0 17px 8px;
-            transition: all linear 0.1s;
-        }
-        .buy-detail a:hover{
-           color: rgb(67, 145, 67);
-        }
-        .why-eshtrak{
-            border: 1px solid white;
-            border-radius: 12px;
-            width: 90%;
-            height: 170px;
-            
-            margin-bottom: -390px;
-            backdrop-filter: blur(2px);
-        }
-        .why-eshtrak p{
-           line-height: 28px;
-           margin-right: 9px;
-        }
-        h1{
-            margin-top: 30px;
-            margin-bottom: 50px;
-        }
-        .main-content{
-            margin-top: 95px;
-        }
-        .why-eshtrak h4{
-            text-align: center;
-            color: rgb(67, 145, 67);
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-        .enter-code{
-        
-          margin-top: 800px;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border: 1px solid white;
-          border-radius: 12px;
-          text-align: start;
-          height: 200px;
-          justify-content: center;
-        }
-        .enter-code input{
-            width: 90%;
-            height: 40px;
-            padding-right: 10px;
-        }
-        .enter-code h2{
-            margin-bottom: 20px;
-        }
-        .enter-code div{
-            width: 90%;
-            display: flex;
-        }
-        .enter-code p{
-            margin-top: 20px;
-        }
-        .enter-code input:focus{
-            outline: 1px solid rgb(67, 145, 67);
-        }
-        .enter-code div button{
-            width: 60px;
-            border: 0;
-            cursor: pointer;
-            background-color: rgb(67, 145, 67);
-        }
-        @media screen and (min-width: 700px){
-            .buy-cadr{
-                
-                width: 650px;
-            }
-            .why-eshtrak{
-                width: 650px;
-            }
-            .enter-code{
-                width: 650px;
-            }
-               .buy-detail a {
-            font-size: 14px;
-          
-        }
         }
         @keyframes float678 {
             0% {
@@ -243,89 +39,360 @@
                 opacity: 0;
             }
         }
+        
+        .particle678 {
+            position: absolute;
+            border-radius: 50%;
+            animation: float678 15s infinite linear;
+            pointer-events: none;
+        }
+        /* استایل ذرات پس‌زمینه */
+        #particlesbody678 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+               .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #43a143;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(67, 161, 67, 0.7);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* کارت‌های قیمت‌گذاری */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #4364a1;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px #1e4386;
+            border-color: #1e4386;
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.03);
+            border: 1px solid #1e4386;
+            box-shadow: 0 10px 30px #1e4386;
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.03) translateY(-5px);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #43a143;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .currency {
+            font-size: 1.2rem;
+            margin-left: 5px;
+            margin-top: 8px;
+        }
+
+        .plan-duration {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li i {
+            color: #43a143;
+            margin-left: 10px;
+        }
+
+        .plan-savings {
+            background: rgba(67, 161, 67, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            text-align: center;
+            color: #43a143;
+        }
+
+        .btn-subscribe {
+            background: #43a143;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .btn-subscribe:hover {
+            background: #3a903a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 161, 67, 0.4);
+        }
+
+        /* بخش کد تخفیف */
+        .discount-section {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 50px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .discount-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #43a143;
+        }
+
+        .discount-input {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .discount-input input {
+            flex-grow: 1;
+            padding: 15px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px 0 0 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .discount-input input:focus {
+            outline: none;
+            border-color: #43a143;
+        }
+
+        .discount-input button {
+            background: #43a143;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 8px 8px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .discount-input button:hover {
+            background: #3a903a;
+        }
+
+        .discount-note {
+            color: #ccc;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        /* فوتر */
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* رسپانسیو */
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            
+            .pricing-card.popular:hover {
+                transform: translateY(-5px);
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .discount-input {
+                flex-direction: column;
+            }
+            
+            .discount-input input {
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            
+            .discount-input button {
+                border-radius: 8px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <!-- کانتینر ذرات -->
     <div id="particlesbody678"></div>
-    <h1>LEARINO</h1>
-    <div class="why-eshtrak">
-        <h4>مزایای خرید اشتراک</h4>
-        <p>دسترسی به تمامی فیلم و سریال ها ✔</p>
-        <p>دسترسی به کتابخونه برای مرور و یادگیری کلمات ذخیره شده✔</p>
-        <p>دسترسی به چت چی پی تی برای یاد گیری کلمات ✔</p>
-        <p>
-            فعال بودن همزمان زیرنویس انگلیسی و فارسی ✔
-        </p>
+     <div class="header">
+        <div class="logo">LEARINO</div>
+        <p class="tagline">با خرید اشتراک لرینو، به دنیای بی‌پایان آموزش زبان انگلیسی وارد شوید</p>
     </div>
-    <div class="main-content">
-        <div class="buy-cadr">
-            <div class="cadr-rightSide">
-                <div class="eshtrak-versian gold">
-                    <p> -20% </p>
-                </div>
-                <div class="eshtrak-detail">
-                    <h4>اشتراک شش ماهه</h4>
-                    <div class="price">
-                        <p class="fake-price">684 تومان</p>
-                        <p class="main-price">480 تومان</p>
-                    </div>
-                </div>
-            </div>
-            <div class="buy-detail">
-                <button class="
-                profit-price">سود شما 18 تومن</button>
-                <a href="#">برای خرید کلیک کنید ></a>
-            </div>
-        </div>
-        <div class="buy-cadr">
-            <div class="cadr-rightSide">
-                <div class="eshtrak-versian silver">
-                    <p>-18%</p>
-                </div>
-                <div class="eshtrak-detail">
-                    <h4>اشتراک سه ماهه</h4>
-                    <div class="price">
-                        <p class="fake-price">345 تومان</p>
-                        <p class="main-price">278 تومان</p>
-                    </div>
-                </div>
-            </div>
-            <div class="buy-detail">
-                <button class="
-                profit-price"> سود شما 10 تومن</button>
-                <a href="#">برای خرید کلیک کنید ></a>
-            </div>
-        </div>
-        <div class="buy-cadr">
-            <div class="cadr-rightSide">
 
-                <div class="eshtrak-versian bronz">
-                    <p>-12%</p>
-                </div>
-                <div class="eshtrak-detail">
-                    <h4> اشتراک یک ماهه</h4>
-                    <div class="price">
-                        <p class="fake-price">248 تومان</p>
-                        <p class="main-price">199تومان</p>
-                    </div>
-                </div>
-            </div>
-            <div class="buy-detail">
-                <button class="
-                profit-price">سود شما 16 تومن</button>
-                <a href="#">برای خرید کلیک کنید ></a>
-            </div>
+    <div class="pricing-container">
+        <!-- پلن اقتصادی -->
+        <div class="pricing-card">
+            <h3 class="plan-name">اشتراک یک ماهه</h3>
+            <div class="plan-price">199<span class="currency">تومان</span></div>
+            <p class="plan-duration">یک ماه دسترسی کامل</p>
+            
+            <ul class="plan-features">
+                <li><i class="fas fa-check-circle"></i> دسترسی به تمامی محتوای آموزشی</li>
+                <li><i class="fas fa-check-circle"></i> پشتیبانی 24 ساعته</li>
+                <li><i class="fas fa-check-circle"></i> امکان دانلود ویدیوها</li>
+                <li><i class="fas fa-check-circle"></i> شرکت در چالش‌های هفتگی</li>
+            </ul>
+            
+            <div class="plan-savings">صرفه‌جویی ۱۲٪ نسبت به خرید ماهانه</div>
+            <button class="btn-subscribe">خرید اشتراک</button>
+        </div>
+
+        <!-- پلن محبوب -->
+        <div class="pricing-card popular">
+            <div class="plan-savings">پیشنهاد ویژه</div>
+            <h3 class="plan-name">اشتراک سه ماهه</h3>
+            <div class="plan-price">499<span class="currency">تومان</span></div>
+            <p class="plan-duration">سه ماه دسترسی کامل</p>
+            
+            <ul class="plan-features">
+                <li><i class="fas fa-check-circle"></i> تمام امکانات پلن یک ماهه</li>
+                <li><i class="fas fa-check-circle"></i> ۲ جلسه مشاوره آموزشی رایگان</li>
+                <li><i class="fas fa-check-circle"></i> دسترسی به محتوای انحصاری</li>
+                <li><i class="fas fa-check-circle"></i> امکان شرکت در وبینارهای ماهانه</li>
+            </ul>
+            
+            <div class="plan-savings">صرفه‌جویی ۲۵٪ نسبت به خرید ماهانه</div>
+            <button class="btn-subscribe">خرید اشتراک</button>
+        </div>
+
+        <!-- پلن حرفه‌ای -->
+        <div class="pricing-card">
+            <h3 class="plan-name">اشتراک شش ماهه</h3>
+            <div class="plan-price">899<span class="currency">تومان</span></div>
+            <p class="plan-duration">شش ماه دسترسی کامل</p>
+            
+            <ul class="plan-features">
+                <li><i class="fas fa-check-circle"></i> تمام امکانات پلن سه ماهه</li>
+                <li><i class="fas fa-check-circle"></i> هدیه ویژه عضویت طلایی</li>
+                <li><i class="fas fa-check-circle"></i> امکان برنامه‌ریزی شخصی‌سازی شده</li>
+                <li><i class="fas fa-check-circle"></i> پشتیبانی VIP و اولویت در پاسخگویی</li>
+            </ul>
+            
+            <div class="plan-savings">صرفه‌جویی ۳۵٪ نسبت به خرید ماهانه</div>
+            <button class="btn-subscribe">خرید اشتراک</button>
         </div>
     </div>
-    <div class="enter-code">
-        <h2>کد تخفیف</h2>
-        <div>
-            <input placeholder="کد تخفیف خود را وارد کنید..." type="text">
-            <button>ثبت کد</button>
+
+    <div class="discount-section">
+        <h3 class="discount-title">کد تخفیف دارید؟</h3>
+        <p>اگر کد تخفیف دریافت کرده‌اید، آن را در قسمت زیر وارد کنید</p>
+        
+        <div class="discount-input">
+            <input type="text" placeholder="کد تخفیف خود را وارد کنید...">
+            <button>اعمال کد</button>
         </div>
-        <p>با کارت هدیه از طرف ما شما میتوانید تخفیف بگیرد 🎁</p>
+        
+        <p class="discount-note">با استفاده از کدهای تخفیف می‌توانید از تخفیف‌های ویژه برخوردار شوید 🎁</p>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 لرینو - تمام حقوق محفوظ است</p>
+        <p>پشتیبانی: support@learino.ir | تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
     </div>
 
 
