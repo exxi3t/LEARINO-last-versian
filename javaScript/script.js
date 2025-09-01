@@ -456,22 +456,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //  loading
 
-  window.addEventListener("DOMContentLoaded", () => {
-  const loader = document.getElementById("page-loader");
+   const loader = document.getElementById("page-loader");
 
-  // وقتی روی هر لینک کلیک شد → لودینگ رو نشون بده
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", e => {
-      // اگر لینک به صفحه‌ی جدید میره (نه # و نه جاوااسکریپت)
-      const href = link.getAttribute("href");
-      if (href && !href.startsWith("#") && !href.startsWith("javascript")) {
-        loader.style.display = "flex";
-      }
-    });
+  // همیشه اول صفحه لودینگ نشون بده
+  document.addEventListener("readystatechange", () => {
+    if (document.readyState === "loading") {
+      loader.style.display = "flex";
+    }
   });
 
-  // وقتی صفحه جدید کامل لود شد → مخفی کن
+  // وقتی کامل لود شد مخفی کن
   window.addEventListener("load", () => {
     loader.style.display = "none";
   });
-});
