@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وبلاگ‌ها - لرینو</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های پایه */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: black;
+            font-family: sans-serif;
+            padding: 15px;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* استایل ذرات پس‌زمینه */
+        #particlesbody678 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle678 {
+            position: absolute;
+            border-radius: 50%;
+            animation: float678 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes float678 {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* استایل محتوا */
+        .content678 {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        /* فیلتر و جستجو */
+        .blog-filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            padding: 8px 15px;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            width: 200px;
+            outline: none;
+        }
+        
+        .search-box i {
+            color: #7289da;
+        }
+        
+        .category-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: rgba(30, 30, 30, 0.8);
+            color: #cccccc;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: rgba(114, 137, 218, 0.2);
+            color: white;
+            border-color: rgba(114, 137, 218, 0.5);
+        }
+        
+        /* استایل کارت‌های وبلاگ */
+        .blog-card {
+            background: transparent;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(114, 137, 218, 0.5);
+        }
+        
+        .blog-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 15px;
+            border: 2px solid rgba(80, 80, 80, 0.5);
+        }
+        
+        .blog-meta {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .blog-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #dddddd;
+        }
+        
+        .blog-info {
+            display: flex;
+            gap: 15px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .blog-info i {
+            margin-left: 5px;
+            color: #888888;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-description {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #cccccc;
+            text-align: justify;
+        }
+        
+        .blog-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .blog-tag {
+            background: rgba(30, 30, 30, 0.8);
+            color: #aaaaaa;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+        }
+        
+        .blog-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .blog-stats {
+            display: flex;
+            gap: 15px;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+        
+        .blog-stats i {
+            margin-left: 5px;
+        }
+        
+        .read-more {
+            background: rgba(114, 137, 218, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background: rgba(114, 137, 218, 1);
+        }
+        
+        /* پagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 10px;
+        }
+        
+        .page-btn {
+            background: rgba(30, 30, 30, 0.8);
+            color: #cccccc;
+            border: 1px solid rgba(80, 80, 80, 0.3);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .page-btn:hover, .page-btn.active {
+            background: rgba(114, 137, 218, 0.2);
+            color: white;
+            border-color: rgba(114, 137, 218, 0.5);
+        }
+        
+        /* رسپانسیو برای تبلت */
+        @media screen and (max-width: 768px) {
+            .blog-filters {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+            
+            .blog-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+            
+            .blog-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* رسپانسیو برای موبایل */
+        @media screen and (max-width: 480px) {
+            .blog-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .blog-stats {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- کانتینر ذرات -->
+    <div id="particlesbody678"></div>
+    
+    <div class="content678">
+        <h1>وبلاگ‌های لرینو</h1>
+        
+        <div class="blog-filters">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="جستجو در وبلاگ‌ها...">
+            </div>
+            
+            <div class="category-filter">
+                <button class="category-btn active">همه</button>
+                <button class="category-btn">فناوری</button>
+                <button class="category-btn">برنامه‌نویسی</button>
+                <button class="category-btn">طراحی</button>
+                <button class="category-btn">سینما</button>
+            </div>
+        </div>
+        
+        <div class="blogs-container">
+            <div class="blog-card">
+                <div class="blog-header">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="نویسنده" class="author-avatar">
+                    <div class="blog-meta">
+                        <div class="author-name">رضا محمدی</div>
+                        <h2 class="blog-title">بهترین روش‌های توسعه وب در سال ۲۰۲۳</h2>
+                        <div class="blog-info">
+                            <span><i class="fas fa-folder"></i> فناوری</span>
+                            <span><i class="far fa-calendar-alt"></i> ۲۵ مرداد ۱۴۰۲</span>
+                            <span><i class="far fa-clock"></i> ۸ دقیقه</span>
+                            <span><i class="far fa-eye"></i> ۱۲۴۵ بازدید</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-content">
+                    <p class="blog-description">
+                        توسعه وب به سرعت در حال تحول است و هر ساله شاهد ظهور فناوری‌ها و فریم‌ورک‌های جدیدی هستیم. در این مقاله به بررسی بهترین روش‌ها و تکنولوژی‌های توسعه وب در سال ۲۰۲۳ می‌پردازیم و جدیدترین ترندهای این صنعت را بررسی می‌کنیم.
+                    </p>
+                    
+                    <div class="blog-tags">
+                        <span class="blog-tag">#توسعه_وب</span>
+                        <span class="blog-tag">#جاوااسکریپت</span>
+                        <span class="blog-tag">#React</span>
+                    </div>
+                    
+                    <div class="blog-actions">
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> ۱۴ نظر</span>
+                            <span><i class="far fa-heart"></i> ۸۷ لایک</span>
+                            <span><i class="fas fa-share-alt"></i> ۳۲ اشتراک</span>
+                        </div>
+                        
+                        <button class="read-more">مطالعه مقاله</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-header">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="نویسنده" class="author-avatar">
+                    <div class="blog-meta">
+                        <div class="author-name">فاطمه احمدی</div>
+                        <h2 class="blog-title">راهنمای جامع امنیت سایبری برای توسعه‌دهندگان</h2>
+                        <div class="blog-info">
+                            <span><i class="fas fa-folder"></i> امنیت</span>
+                            <span><i class="far fa-calendar-alt"></i> ۱۸ مرداد ۱۴۰۲</span>
+                            <span><i class="far fa-clock"></i> ۱۲ دقیقه</span>
+                            <span><i class="far fa-eye"></i> ۹۸۷ بازدید</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-content">
+                    <p class="blog-description">
+                        امنیت سایبری یکی از مهم‌ترین موضوعات در توسعه نرم‌افزار است. در این مقاله به بررسی بهترین روش‌های ایمن‌سازی برنامه‌های وب، جلوگیری از حملات رایج و استفاده از ابزارهای امنیتی می‌پردازیم.
+                    </p>
+                    
+                    <div class="blog-tags">
+                        <span class="blog-tag">#امنیت</span>
+                        <span class="blog-tag">#توسعه</span>
+                        <span class="blog-tag">#BestPractices</span>
+                    </div>
+                    
+                    <div class="blog-actions">
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> ۲۳ نظر</span>
+                            <span><i class="far fa-heart"></i> ۱۰۴ لایک</span>
+                            <span><i class="fas fa-share-alt"></i> ۴۵ اشتراک</span>
+                        </div>
+                        
+                        <button class="read-more">مطالعه مقاله</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-header">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="نویسنده" class="author-avatar">
+                    <div class="blog-meta">
+                        <div class="author-name">امیر حسینی</div>
+                        <h2 class="blog-title">یادگیری ماشین و هوش مصنوعی در توسعه نرم‌افزار</h2>
+                        <div class="blog-info">
+                            <span><i class="fas fa-folder"></i> هوش مصنوعی</span>
+                            <span><i class="far fa-calendar-alt"></i> ۱۰ مرداد ۱۴۰۲</span>
+                            <span><i class="far fa-clock"></i> ۱۵ دقیقه</span>
+                            <span><i class="far fa-eye"></i> ۱۵۶۲ بازدید</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-content">
+                    <p class="blog-description">
+                        هوش مصنوعی و یادگیری ماشین در حال تغییر دادن روش توسعه نرم‌افزار هستند. در این مقاله به بررسی کاربردهای AI در توسعه، ابزارهای محبوب و آینده این تکنولوژی می‌پردازیم.
+                    </p>
+                    
+                    <div class="blog-tags">
+                        <span class="blog-tag">#هوش_مصنوعی</span>
+                        <span class="blog-tag">#ML</span>
+                        <span class="blog-tag">#توسعه</span>
+                    </div>
+                    
+                    <div class="blog-actions">
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> ۳۱ نظر</span>
+                            <span><i class="far fa-heart"></i> ۱۲۳ لایک</span>
+                            <span><i class="fas fa-share-alt"></i> ۵۶ اشتراک</span>
+                        </div>
+                        
+                        <button class="read-more">مطالعه مقاله</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-header">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="نویسنده" class="author-avatar">
+                    <div class="blog-meta">
+                        <div class="author-name">سارا کریمی</div>
+                        <h2 class="blog-title">طراحی رابط کاربری مدرن با Figma</h2>
+                        <div class="blog-info">
+                            <span><i class="fas fa-folder"></i> طراحی</span>
+                            <span><i class="far fa-calendar-alt"></i> ۵ مرداد ۱۴۰۲</span>
+                            <span><i class="far fa-clock"></i> ۱۰ دقیقه</span>
+                            <span><i class="far fa-eye"></i> ۲۰۴۵ بازدید</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="blog-content">
+                    <p class="blog-description">
+                        Figma به یکی از محبوب‌ترین ابزارهای طراحی رابط کاربری تبدیل شده است. در این مقاله به بررسی ویژگی‌های جدید Figma، پلاگین‌های مفید و تکنیک‌های طراحی حرفه‌ای می‌پردازیم.
+                    </p>
+                    
+                    <div class="blog-tags">
+                        <span class="blog-tag">#طراحی</span>
+                        <span class="blog-tag">#Figma</span>
+                        <span class="blog-tag">#UI/UX</span>
+                    </div>
+                    
+                    <div class="blog-actions">
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> ۴۲ نظر</span>
+                            <span><i class="far fa-heart"></i> ۱۶۷ لایک</span>
+                            <span><i class="fas fa-share-alt"></i> ۷۸ اشتراک</span>
+                        </div>
+                        
+                        <button class="read-more">مطالعه مقاله</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // ایجاد ذرات پس‌زمینه
+        const particlesContainer678 = document.getElementById('particlesbody678');
+        const particleCount678 = 50;
+        
+        // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
+        const colors678 = [
+            'rgba(88, 101, 242, 0.7)',   // آبی لرینو
+            'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
+            'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
+            'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
+            'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
+        ];
+        
+        // ایجاد ذرات
+        for (let i678 = 0; i678 < particleCount678; i678++) {
+            const particle678 = document.createElement('div');
+            particle678.classList.add('particle678');
+            
+            // اندازه تصادفی بین 2 تا 8 پیکسل
+            const size678 = Math.random() * 6 + 2;
+            particle678.style.width = `${size678}px`;
+            particle678.style.height = `${size678}px`;
+            
+            // موقعیت تصادفی در صفحه
+            particle678.style.left = `${Math.random() * 100}%`;
+            particle678.style.top = `${Math.random() * 100}%`;
+            
+            // تاخیر انیمیشن تصادفی
+            particle678.style.animationDelay = `${Math.random() * 15}s`;
+            
+            // مدت زمان انیمیشن تصادفی
+            const duration678 = Math.random() * 10 + 10;
+            particle678.style.animationDuration = `${duration678}s`;
+            
+            // انتخاب رنگ تصادفی
+            const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
+            particle678.style.background = randomColor678;
+            
+            // شفافیت تصادفی
+            particle678.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            // افزودن ذره به کانتینر
+            particlesContainer678.appendChild(particle678);
+        }
+        
+        // تغییر اندازه ذرات هنگام تغییر سایز پنجره
+        window.addEventListener('resize', function() {
+            const particles678 = document.querySelectorAll('.particle678');
+            particles678.forEach(particle678 => {
+                // تنظیم مجدد موقعیت ذرات
+                particle678.style.left = `${Math.random() * 100}%`;
+                particle678.style.top = `${Math.random() * 100}%`;
+            });
+        });
+        
+        // فیلتر دسته‌بندی
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // دکمه‌های مطالعه مقاله
+        const readMoreButtons = document.querySelectorAll('.read-more');
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const blogTitle = this.closest('.blog-card').querySelector('.blog-title').textContent;
+                alert(`مقاله "${blogTitle}" در حال بارگذاری است...`);
+            });
+        });
+        
+        // پagination
+        const pageButtons = document.querySelectorAll('.page-btn');
+        pageButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.querySelector('i')) {
+                    pageButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

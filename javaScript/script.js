@@ -468,8 +468,8 @@ window.addEventListener("load", () => {
   setTimeout(()=>{
     initialLoader.style.transition = "opacity 0.5s";
     initialLoader.style.opacity = 0;
-    setTimeout(()=> initialLoader.style.display="none",500);
-  }, 100); // کمی تاخیر قبل محو شدن
+    setTimeout(()=> initialLoader.style.display="none",);
+  }, ); // کمی تاخیر قبل محو شدن
 });
 
 // لودینگ صفحات داخلی (مناسب برای رفتن بین صفحات یا back/forward)

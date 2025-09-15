@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نمایش فیلم‌ها</title>
+    <link rel="stylesheet" href="./styles/footer.css">
     <link rel="stylesheet" href="input.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -278,6 +279,8 @@
     </style>
 </head>
 <body>
+    
+        
     <!-- کانتینر ذرات -->
     <div id="particlesbody678"></div>
     
@@ -495,7 +498,26 @@
 
         </section>
     </div>
-
+ <div class="mobile-footer hidden">
+        <div class="footer-item active" data-page="home">
+            <i class="fas fa-home"></i>
+            <div class="indicator"></div>
+        </div>
+        <div class="footer-item" data-page="search">
+            <i class="fas fa-search"></i>
+            <div class="indicator"></div>
+        </div>
+        <div class="footer-item" data-page="library">
+            <i class="fas fa-book"></i>
+            <div class="indicator"></div>
+        </div>
+        <div class="footer-item" data-page="profile">
+            <i class="fas fa-user"></i>
+            <div class="indicator"></div>
+        </div>
+    </div>
+    </div>
+    <script src="./javaScript/script.js"></script>
     <script>
         // ایجاد ذرات پس‌زمینه
         const particlesContainer678 = document.getElementById('particlesbody678');
