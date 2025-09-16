@@ -1,7 +1,7 @@
 //بک گراند متحرک بادی
    // ایجاد ذرات متحرک
         const particlesContainer333 = document.getElementById('particlesbody333');
-        const particleCount333 = 50; // تعداد ذرات
+        const particleCount333 = 15; // تعداد ذرات
         
         // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
         const colors333 = [
