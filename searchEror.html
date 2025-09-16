@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتیجه‌ای یافت نشد - لرینو</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* استایل‌های پایه */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: black;
+            font-family: sans-serif;
+            color: white;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* استایل ذرات پس‌زمینه */
+        #particlesbody678 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle678 {
+            position: absolute;
+            border-radius: 50%;
+            animation: float678 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes float678 {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* استایل محتوا */
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 30px;
+            z-index: 1;
+            margin: auto; /* مرکز عمودی */
+        }
+        
+        .error-icon {
+            font-size: 6rem;
+            color: rgba(114, 137, 218, 0.7);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #dddddd;
+        }
+        
+        .error-query {
+            font-size: 1.3rem;
+            color: rgba(114, 137, 218, 0.9);
+            margin-bottom: 20px;
+            font-weight: bold;
+            direction: ltr;
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(30, 30, 30, 0.5);
+            border-radius: 8px;
+        }
+        
+        .error-message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #aaaaaa;
+            max-width: 500px;
+        }
+        
+        /* استایل فوتر */
+        .error-footer {
+            text-align: center;
+            padding: 20px;
+            color: rgba(170, 170, 170, 0.7);
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        
+        .error-footer a {
+            color: rgba(114, 137, 218, 0.8);
+            text-decoration: none;
+        }
+        
+        .error-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* رسپانسیو برای تبلت */
+        @media screen and (max-width: 768px) {
+            .error-icon {
+                font-size: 5rem;
+            }
+            
+            .error-title {
+                font-size: 1.6rem;
+            }
+            
+            .error-query {
+                font-size: 1.1rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+        }
+        
+        /* رسپانسیو برای موبایل */
+        @media screen and (max-width: 480px) {
+            .error-icon {
+                font-size: 4rem;
+            }
+            
+            .error-title {
+                font-size: 1.4rem;
+            }
+            
+            .error-query {
+                font-size: 1rem;
+            }
+            
+            .error-container {
+                padding: 20px;
+            }
+            
+            .error-message {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- کانتینر ذرات -->
+    <div id="particlesbody678"></div>
+    
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <h1 class="error-title">نتیجه‌ای برای جستجوی شما یافت نشد</h1>
+        
+        <div class="error-query">"react native tutorial"</div>
+        
+        <p class="error-message">
+            متأسفیم، اما هیچ نتیجه‌ای برای جستجوی شما پیدا نکردیم. لطفاً از کلمات کلیدی مختلف استفاده کنید.
+        </p>
+    </div>
+    
+    <div class="error-footer">
+        <p>© ۱۴۰۲ - لرینو. تمام حقوق محفوظ است. | <a href="#">پشتیبانی</a></p>
+    </div>
+
+    <script>
+        // ایجاد ذرات پس‌زمینه
+        const particlesContainer678 = document.getElementById('particlesbody678');
+        const particleCount678 = 40; // کاهش تعداد ذرات
+        
+        // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
+        const colors678 = [
+            'rgba(88, 101, 242, 0.7)',   // آبی لرینو
+            'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
+            'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
+            'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
+            'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
+        ];
+        
+        // ایجاد ذرات
+        for (let i678 = 0; i678 < particleCount678; i678++) {
+            const particle678 = document.createElement('div');
+            particle678.classList.add('particle678');
+            
+            // اندازه تصادفی بین 2 تا 6 پیکسل
+            const size678 = Math.random() * 4 + 2;
+            particle678.style.width = `${size678}px`;
+            particle678.style.height = `${size678}px`;
+            
+            // موقعیت تصادفی در صفحه
+            particle678.style.left = `${Math.random() * 100}%`;
+            particle678.style.top = `${Math.random() * 100}%`;
+            
+            // تاخیر انیمیشن تصادفی
+            particle678.style.animationDelay = `${Math.random() * 15}s`;
+            
+            // مدت زمان انیمیشن تصادفی
+            const duration678 = Math.random() * 10 + 10;
+            particle678.style.animationDuration = `${duration678}s`;
+            
+            // انتخاب رنگ تصادفی
+            const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
+            particle678.style.background = randomColor678;
+            
+            // شفافیت تصادفی
+            particle678.style.opacity = Math.random() * 0.7 + 0.3;
+            
+            // افزودن ذره به کانتینر
+            particlesContainer678.appendChild(particle678);
+        }
+        
+        // تغییر اندازه ذرات هنگام تغییر سایز پنجره
+        window.addEventListener('resize', function() {
+            const particles678 = document.querySelectorAll('.particle678');
+            particles678.forEach(particle678 => {
+                // تنظیم مجدد موقعیت ذرات
+                particle678.style.left = `${Math.random() * 100}%`;
+                particle678.style.top = `${Math.random() * 100}%`;
+            });
+        });
+        
+        // نمایش عبارت جستجو شده در URL (اختیاری)
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('q');
+            if (query) {
+                document.querySelector('.error-query').textContent = `"${query}"`;
+            }
+        });
+    </script>
+</body>
+</html>
