@@ -8,7 +8,7 @@
             },
         });
 
-        // Comment System Data
+        // // Comment System Data
         let comments = [
             {
                 id: 1,
@@ -157,23 +157,23 @@
             }
         });
 
-        // Floating Comment Button
-        const floatingCommentBtn = document.getElementById('floatingCommentBtn');
-        floatingCommentBtn.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-            document.querySelector('.tab[data-tab="comments"]').classList.add('active');
-            document.getElementById('comments').classList.add('active');
-            document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('commentInput').focus();
-        });
+        // // Floating Comment Button
+        // const floatingCommentBtn = document.getElementById('floatingCommentBtn');
+        // floatingCommentBtn.addEventListener('click', () => {
+        //     tabs.forEach(t => t.classList.remove('active'));
+        //     tabContents.forEach(c => c.classList.remove('active'));
+        //     document.querySelector('.tab[data-tab="comments"]').classList.add('active');
+        //     document.getElementById('comments').classList.add('active');
+        //     document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
+        //     document.getElementById('commentInput').focus();
+        // });
 
-        // Scroll to Bottom Button
-        const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
-        scrollToBottomBtn.addEventListener('click', () => {
-            const commentList = document.getElementById('commentList');
-            commentList.scrollTop = commentList.scrollHeight;
-        });
+        // // Scroll to Bottom Button
+        // const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
+        // scrollToBottomBtn.addEventListener('click', () => {
+        //     const commentList = document.getElementById('commentList');
+        //     commentList.scrollTop = commentList.scrollHeight;
+        // });
 
         // Season Selector
         const seasonTabs = document.querySelectorAll('.season-tab');
@@ -390,30 +390,30 @@
         }
 
         // Submit Comment
-        commentSubmit.addEventListener('click', () => {
-            if (commentInput.value.trim()) {
-                const newComment = {
-                    id: Date.now(),
-                    user: "کاربر ناشناس",
-                    time: "اکنون",
-                    text: commentInput.value,
-                    likes: 0,
-                    dislikes: 0,
-                    replies: [],
-                    liked: false,
-                    disliked: false
-                };
-                comments.push(newComment);
-                commentInput.value = '';
-                renderComments();
-                const newCommentElement = commentList.querySelector(`[data-comment-id="${newComment.id}"]`);
-                newCommentElement.classList.add('new-comment');
-                setTimeout(() => {
-                    newCommentElement.classList.remove('new-comment');
-                }, 500);
-                commentList.scrollTop = commentList.scrollHeight;
-            }
-        });
+        // commentSubmit.addEventListener('click', () => {
+        //     if (commentInput.value.trim()) {
+        //         const newComment = {
+        //             id: Date.now(),
+        //             user: "کاربر ناشناس",
+        //             time: "اکنون",
+        //             text: commentInput.value,
+        //             likes: 0,
+        //             dislikes: 0,
+        //             replies: [],
+        //             liked: false,
+        //             disliked: false
+        //         };
+        //         comments.push(newComment);
+        //         commentInput.value = '';
+        //         renderComments();
+        //         const newCommentElement = commentList.querySelector(`[data-comment-id="${newComment.id}"]`);
+        //         newCommentElement.classList.add('new-comment');
+        //         setTimeout(() => {
+        //             newCommentElement.classList.remove('new-comment');
+        //         }, 500);
+        //         commentList.scrollTop = commentList.scrollHeight;
+        //     }
+        // });
 
         // Initial render
         renderComments();
