@@ -425,52 +425,8 @@
             });
         });
         
-        // مدیریت فرم ارسال نظر
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const commentText = document.getElementById('comment').value;
-            
-            // if (name && commentText) {
-            //     // ایجاد عنصر نظر جدید
-            //     const newComment = document.createElement('div');
-            //     newComment.classList.add('comment');
-                
-            //     const currentDate = new Date().toLocaleDateString('fa-IR');
-                
-            //     newComment.innerHTML = `
-            //         <div class="comment-header">
-            //             <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="کاربر" class="comment-avatar">
-            //             <div>
-            //                 <div class="comment-author">${name}</div>
-            //                 <div class="comment-date"><i class="far fa-calendar-alt"></i> ${currentDate}</div>
-            //             </div>
-            //         </div>
-            //         <div class="comment-content">
-            //             <p>${commentText}</p>
-            //         </div>
-            //     `;
-                
-            //     // افزودن نظر جدید به ابتدای لیست نظرات
-            //     const commentsSection = document.querySelector('.comments-section');
-            //     commentsSection.insertBefore(newComment, document.querySelector('.add-comment'));
-                
-            //     // افزایش تعداد نظرات
-            //     const commentsTitle = document.querySelector('.comments-title');
-            //     const commentCount = parseInt(commentsTitle.textContent.match(/\d+/)[0]) + 1;
-            //     commentsTitle.textContent = commentsTitle.textContent.replace(/\d+/, commentCount);
-                
-            //     // پاک کردن فرم
-            //     document.getElementById('name').value = '';
-            //     document.getElementById('email').value = '';
-            //     document.getElementById('comment').value = '';
-                
-            //     // نمایش پیام موفقیت
-            //     alert('نظر شما با موفقیت ثبت شد و پس از تایید نمایش داده خواهد شد.');
-            // }
-        });
+       
+      
     </script>
 </body>
 </html>
