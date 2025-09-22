@@ -448,6 +448,50 @@
             padding: 15px;
         }
 
+
+
+
+
+
+.reply-item {
+    display: flex;
+    gap: 12px;
+    margin: 15px 0 0 60px; 
+    padding: 10px 0;
+    border-left: 2px solid #e50914; 
+}
+
+.reply-item .comment-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+}
+
+.reply-item .comment-content {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.reply-item .comment-user-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.reply-item .comment-time {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.reply-item .comment-text {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+
+
         .episode-title {
             font-weight: bold;
             margin-bottom: 8px;
@@ -501,6 +545,7 @@
 
         /* Comments Styles */
         .comment-list-tab {
+            
             max-height: 500px;
             overflow-y: auto;
             padding-right: 10px;
