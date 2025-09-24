@@ -389,60 +389,123 @@
     </div>
     
     <script>
-        // ایجاد ذرات پس‌زمینه
-        const particlesContainer678 = document.getElementById('particlesbody678');
-        const particleCount678 = 50;
+        // // ایجاد ذرات پس‌زمینه
+        // const particlesContainer678 = document.getElementById('particlesbody678');
+        // const particleCount678 = 50;
         
-        // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
-        const colors678 = [
-            'rgba(88, 101, 242, 0.7)',   // آبی لرینو
-            'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
-            'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
-            'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
-            'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
-        ];
+        // // رنگ‌های مختلف برای ذرات (تم لرینو - آبی/بنفش)
+        // const colors678 = [
+        //     'rgba(88, 101, 242, 0.7)',   // آبی لرینو
+        //     'rgba(114, 137, 218, 0.7)',  // آبی روشن لرینو
+        //     'rgba(153, 170, 181, 0.7)',  // آبی خاکستری
+        //     'rgba(185, 187, 190, 0.7)',  // خاکستری روشن
+        //     'rgba(170, 142, 214, 0.7)'    // بنفش لرینو
+        // ];
         
-        // ایجاد ذرات
-        for (let i678 = 0; i678 < particleCount678; i678++) {
-            const particle678 = document.createElement('div');
-            particle678.classList.add('particle678');
+        // // ایجاد ذرات
+        // for (let i678 = 0; i678 < particleCount678; i678++) {
+        //     const particle678 = document.createElement('div');
+        //     particle678.classList.add('particle678');
             
-            // اندازه تصادفی بین 2 تا 8 پیکسل
-            const size678 = Math.random() * 6 + 2;
-            particle678.style.width = `${size678}px`;
-            particle678.style.height = `${size678}px`;
+        //     // اندازه تصادفی بین 2 تا 8 پیکسل
+        //     const size678 = Math.random() * 6 + 2;
+        //     particle678.style.width = `${size678}px`;
+        //     particle678.style.height = `${size678}px`;
             
-            // موقعیت تصادفی در صفحه
-            particle678.style.left = `${Math.random() * 100}%`;
-            particle678.style.top = `${Math.random() * 100}%`;
+        //     // موقعیت تصادفی در صفحه
+        //     particle678.style.left = `${Math.random() * 100}%`;
+        //     particle678.style.top = `${Math.random() * 100}%`;
             
-            // تاخیر انیمیشن تصادفی
-            particle678.style.animationDelay = `${Math.random() * 15}s`;
+        //     // تاخیر انیمیشن تصادفی
+        //     particle678.style.animationDelay = `${Math.random() * 15}s`;
             
-            // مدت زمان انیمیشن تصادفی
-            const duration678 = Math.random() * 10 + 10;
-            particle678.style.animationDuration = `${duration678}s`;
+        //     // مدت زمان انیمیشن تصادفی
+        //     const duration678 = Math.random() * 10 + 10;
+        //     particle678.style.animationDuration = `${duration678}s`;
             
-            // انتخاب رنگ تصادفی
-            const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
-            particle678.style.background = randomColor678;
+        //     // انتخاب رنگ تصادفی
+        //     const randomColor678 = colors678[Math.floor(Math.random() * colors678.length)];
+        //     particle678.style.background = randomColor678;
             
-            // شفافیت تصادفی
-            particle678.style.opacity = Math.random() * 0.7 + 0.3;
+        //     // شفافیت تصادفی
+        //     particle678.style.opacity = Math.random() * 0.7 + 0.3;
             
-            // افزودن ذره به کانتینر
-            particlesContainer678.appendChild(particle678);
-        }
+        //     // افزودن ذره به کانتینر
+        //     particlesContainer678.appendChild(particle678);
+        // }
         
-        // تغییر اندازه ذرات هنگام تغییر سایز پنجره
-        window.addEventListener('resize', function() {
-            const particles678 = document.querySelectorAll('.particle678');
-            particles678.forEach(particle678 => {
-                // تنظیم مجدد موقعیت ذرات
-                particle678.style.left = `${Math.random() * 100}%`;
-                particle678.style.top = `${Math.random() * 100}%`;
-            });
-        });
+        // // تغییر اندازه ذرات هنگام تغییر سایز پنجره
+        // window.addEventListener('resize', function() {
+        //     const particles678 = document.querySelectorAll('.particle678');
+        //     particles678.forEach(particle678 => {
+        //         // تنظیم مجدد موقعیت ذرات
+        //         particle678.style.left = `${Math.random() * 100}%`;
+        //         particle678.style.top = `${Math.random() * 100}%`;
+        //     });
+        // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // =========================
+// PARTICLES BACKGROUND (Lerino Theme)
+// =========================
+const particlesContainer = document.getElementById('particlesbody678');
+const particleCount = 50;
+
+// رنگ‌های مختلف
+const colors = [
+    'rgba(88, 101, 242, 0.7)',
+    'rgba(114, 137, 218, 0.7)',
+    'rgba(153, 170, 181, 0.7)',
+    'rgba(185, 187, 190, 0.7)',
+    'rgba(170, 142, 214, 0.7)'
+];
+
+// تابع ایجاد یک ذره
+function createParticle() {
+    const particle = document.createElement('div');
+    particle.classList.add('particle678');
+
+    const size = Math.random() * 6 + 2;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+
+    particle.style.animationDelay = `${Math.random() * 15}s`;
+    particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.opacity = Math.random() * 0.7 + 0.3;
+
+    particlesContainer.appendChild(particle);
+}
+
+// ایجاد تمام ذرات
+for (let i = 0; i < particleCount; i++) {
+    createParticle();
+}
+
+// هنگام تغییر سایز، موقعیت ذرات را به‌روزرسانی کن
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.particle678').forEach(p => {
+        p.style.left = `${Math.random() * 100}%`;
+        p.style.top = `${Math.random() * 100}%`;
+    });
+});
+
     </script>
 </body>
 </html>
