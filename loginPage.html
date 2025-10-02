@@ -10,10 +10,9 @@
 
 <body>
     <div class="particles" id="particles"></div>
-<!-- عناصر پس زمینه -->
+    <!-- عناصر پس زمینه -->
     <div class="stars" id="stars"></div>
-    <div class="planet" id="planet1"></div>
-    <div class="planet" id="planet2"></div>
+   
 
     <!-- کانتینر اصلی -->
     <div class="auth-container">
@@ -28,24 +27,24 @@
                 <h2>خوش برگشتی!</h2>
                 <p>لطفاً اطلاعات حساب خود را وارد کنید</p>
             </div>
-
+            <!-- بسیییار مهم این نمونه کامل  اینپوت با اروره به ایدی ارور  دقت کن و اینپوت های دیگه پسورد ئ غیره هم همین کار کن -->
             <div class="input-group">
-                <input type="text" id="loginUsername" class="input-field" placeholder=" " required>
-                <i class="fas fa-user input-icon"></i>
-                <label for="loginUsername" class="input-label">نام کاربری یا ایمیل</label>
-                <div class="error-message" id="loginUsernameError"></div>
+                <input type="text" id="loginUsernameError" class="input-field" placeholder=" " required>
+                <i class="fas fa-user input-icon" id="loginUsernameError"></i>
+                <label for="loginUsernameError" class="input-label">نام کاربری یا ایمیل</label>
+                  <div class="error-message" id="loginUsernameError">لطفاً نام کاربری یا ایمیل خود را وارد کنید</div>
             </div>
 
             <div class="input-group">
                 <input type="password" id="loginPassword" class="input-field" placeholder=" " required>
-                <i class="fas fa-lock input-icon"></i>
+                <i class="fas fa-lock input-icon " id="loginPasswordError"></i>
                 <label for="loginPassword" class="input-label">رمز عبور</label>
                 <i class="fas fa-eye toggle-password" id="toggleLoginPassword"></i>
                 <div class="error-message" id="loginPasswordError"></div>
             </div>
 
             <div class="forgot-password">
-                <a href="#" id="forgotPasswordLink">
+                <a href="./forgot-password.html" id="forgotPasswordLink">
                     <i class="fas fa-question-circle"></i> رمز عبورم را فراموش کرده‌ام
                 </a>
             </div>
@@ -55,143 +54,10 @@
             </button>
 
             <div class="form-footer">
-                حساب کاربری ندارید؟ <a href="#" id="showRegister">ثبت نام کنید</a>
+                حساب کاربری ندارید؟ <a href="./register.html">ثبت نام کنید</a>
             </div>
-        </div>
-
-        <!-- فرم ثبت نام -->
-        <div class="form" id="registerForm">
-            <div class="form-header">
-                <h2>ثبت نام کاربر جدید</h2>
-                <p>لطفاً اطلاعات مورد نیاز را وارد کنید</p>
-            </div>
-
-            <div class="input-group">
-                <input type="text" id="registerUsername" class="input-field" placeholder=" " required>
-                <i class="fas fa-user-tag input-icon"></i>
-                <label for="registerUsername" class="input-label">نام کاربری</label>
-                <div class="error-message" id="registerUsernameError"></div>
-            </div>
-
-            <div class="input-group">
-                <input type="tel" id="registerPhone" class="input-field" placeholder=" " required>
-                <i class="fas fa-mobile-alt input-icon"></i>
-                <label for="registerPhone" class="input-label">شماره موبایل</label>
-                <div class="error-message" id="registerPhoneError"></div>
-            </div>
-
-            <div class="input-group">
-                <input type="email" id="registerEmail" class="input-field" placeholder=" ">
-                <i class="fas fa-envelope input-icon"></i>
-                <label for="registerEmail" class="input-label">ایمیل (اختیاری)</label>
-                <div class="error-message" id="registerEmailError"></div>
-            </div>
-
-            <div class="input-group">
-                <input type="password" id="registerPassword" class="input-field" placeholder=" " required>
-                <i class="fas fa-lock input-icon"></i>
-                <label for="registerPassword" class="input-label">رمز عبور</label>
-                <i class="fas fa-eye toggle-password" id="toggleRegisterPassword"></i>
-                <div class="error-message" id="registerPasswordError"></div>
-            </div>
-
-            <div class="input-group">
-                <input type="password" id="registerConfirmPassword" class="input-field" placeholder=" " required>
-                <i class="fas fa-lock input-icon"></i>
-                <label for="registerConfirmPassword" class="input-label">تکرار رمز عبور</label>
-                <i class="fas fa-eye toggle-password" id="toggleRegisterConfirmPassword"></i>
-                <div class="error-message" id="registerConfirmPasswordError"></div>
-            </div>
-
-            <button class="btn" id="registerBtn">
-                <i class="fas fa-user-plus"></i> ثبت نام
-            </button>
-
-            <div class="form-footer">
-                قبلاً ثبت نام کرده‌اید؟ <a href="#" id="showLogin">وارد شوید</a>
-            </div>
-        </div>
-
-        <!-- فرم فراموشی رمز عبور -->
-        <div class="form" id="forgotPasswordForm">
-            <div class="form-header">
-                <h2>بازیابی رمز عبور</h2>
-                <p>لطفاً شماره موبایل خود را وارد کنید</p>
-            </div>
-
-            <div class="input-group">
-                <input type="tel" id="forgotPhone" class="input-field" placeholder=" " required>
-                <i class="fas fa-mobile-alt input-icon"></i>
-                <label for="forgotPhone" class="input-label">شماره موبایل</label>
-                <div class="error-message" id="forgotPhoneError"></div>
-            </div>
-
-            <button class="btn" id="forgotPasswordBtn">
-                <i class="fas fa-paper-plane"></i> ارسال کد تایید
-            </button>
-
-            <div class="form-footer">
-                <a href="#" id="showLoginFromForgot">
-                    <i class="fas fa-arrow-right"></i> بازگشت به صفحه ورود
-                </a>
-            </div>
-        </div>
-
-        <!-- فرم وارد کردن کد تایید -->
-        <div class="form" id="verifyCodeForm">
-            <div class="form-header">
-                <h2>تایید هویت</h2>
-                <p>کد ارسال شده به تلفن همراه را وارد کنید</p>
-            </div>
-
-            <div class="input-group">
-                <input type="text" id="verificationCode" class="input-field" placeholder=" " required>
-                <i class="fas fa-key input-icon"></i>
-                <label for="verificationCode" class="input-label">کد تایید ۶ رقمی</label>
-                <div class="error-message" id="verificationCodeError"></div>
-            </div>
-
-            <button class="btn" id="verifyCodeBtn">
-                <i class="fas fa-check"></i> تایید
-            </button>
-
-            <div class="form-footer">
-                <a href="#" id="resendCodeLink">
-                    <i class="fas fa-redo"></i> ارسال مجدد کد
-                </a>
-            </div>
-        </div>
-
-        <!-- فرم تغییر رمز عبور -->
-        <div class="form" id="resetPasswordForm">
-            <div class="form-header">
-                <h2>تغییر رمز عبور</h2>
-                <p>لطفاً رمز عبور جدید خود را وارد کنید</p>
-            </div>
-
-            <div class="input-group">
-                <input type="password" id="newPassword" class="input-field" placeholder=" " required>
-                <i class="fas fa-lock input-icon"></i>
-                <label for="newPassword" class="input-label">رمز عبور جدید</label>
-                <i class="fas fa-eye toggle-password" id="toggleNewPassword"></i>
-                <div class="error-message" id="newPasswordError"></div>
-            </div>
-
-            <div class="input-group">
-                <input type="password" id="confirmNewPassword" class="input-field" placeholder=" " required>
-                <i class="fas fa-lock input-icon"></i>
-                <label for="confirmNewPassword" class="input-label">تکرار رمز عبور جدید</label>
-                <i class="fas fa-eye toggle-password" id="toggleConfirmNewPassword"></i>
-                <div class="error-message" id="confirmNewPasswordError"></div>
-            </div>
-
-            <button class="btn" id="resetPasswordBtn">
-                <i class="fas fa-sync-alt"></i> تغییر رمز عبور
-            </button>
         </div>
     </div>
-<script src="./javaScript/login.js"></script>
-
+    <script src="./javaScript/login.js"></script>
 </body>
-
 </html>
